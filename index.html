@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manual Mantis · Colaboradores</title>
+<style>
+:root{--bg:#15171c;--surface:#1e2129;--surface2:#262a34;--text:#e8e6e1;--muted:#a9aeb9;--accent:#d9b26f;--border:#2e333e;--orange:#f08a24;--orange-bg:#3a2a16;--ok:#7fc49a;--red:#e07a6e}
+[data-theme="light"]{--bg:#faf8f4;--surface:#ffffff;--surface2:#f3efe7;--text:#1f2328;--muted:#5a616d;--accent:#8a6417;--border:#ddd6c8;--orange:#a4541c;--orange-bg:#fbeedd;--ok:#2d7a4f;--red:#b13b2e;color-scheme:light}
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:17px;line-height:1.6}
+body{padding:0 16px}
+.wrap{max-width:860px;margin:0 auto;padding:24px 0 80px}
+h1{color:var(--accent);font-size:1.9rem;margin:0 0 4px;line-height:1.2}
+h2{color:var(--accent);font-size:1.3rem;margin:0 0 12px}
+h3{font-size:1.05rem;margin:22px 0 8px;color:var(--text)}
+p{margin:0 0 10px}
+.sub{color:var(--muted);margin-bottom:16px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+button,.btn{font:inherit;cursor:pointer;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);padding:9px 14px;min-height:42px}
+button:focus-visible,summary:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}
+.nav button[aria-current="true"]{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:700}
+.sec{display:none}
+.sec.on{display:block}
+.box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin:12px 0}
+.box p:last-child{margin-bottom:0}
+.say{background:var(--surface2);border-left:4px solid var(--accent);border-radius:10px;padding:12px 16px;margin:10px 0;font-style:italic}
+.note{background:var(--orange-bg);border:1px solid var(--orange);border-radius:10px;padding:12px 16px;margin:10px 0;color:var(--text)}
+.note b{color:var(--orange)}
+.safe{background:var(--surface);border:1px solid var(--ok);border-radius:10px;padding:10px 14px;margin:8px 0;color:var(--ok)}
+.tip{color:var(--muted);font-size:.95rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin:12px 0;overflow:hidden}
+.card summary{cursor:pointer;padding:14px 18px;font-weight:700;list-style:none}
+.card summary::-webkit-details-marker{display:none}
+.card summary::after{content:"+";float:right;color:var(--accent);font-size:1.3rem;line-height:1}
+.card[open] summary::after{content:"−"}
+.card .in{padding:0 18px 16px;border-top:1px solid var(--border)}
+.tag{display:inline-block;font-size:.78rem;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:1px 8px;margin-left:6px;font-weight:400;vertical-align:middle}
+.st{display:inline-block;font-size:.75rem;font-weight:700;border-radius:6px;padding:1px 7px;margin-left:4px;color:#15171c}
+.st.v{background:var(--ok)}.st.c{background:var(--accent)}.st.u{background:var(--red)}.st.p{background:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.95rem}
+td,th{border-bottom:1px solid var(--border);padding:8px 6px;text-align:left;vertical-align:top}
+th{color:var(--accent)}
+.search{width:100%;font:inherit;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);margin:12px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:700}
+.obj-tag{display:block;font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.obj{font-weight:700}
+.ruta li{margin:6px 0}
+.lvl{color:var(--accent);font-size:.85rem}
+.links a{display:block;color:var(--accent);padding:8px 0;font-weight:700}
+.empty{color:var(--muted);padding:16px 0}
+.st.e{background:var(--muted);color:var(--bg)}.st.c{background:var(--accent);color:var(--bg)}.st.v{background:var(--ok);color:var(--bg)}
+.lbl{color:var(--accent);font-weight:700}
+footer{margin-top:36px;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="top">
+  <div>
+    <h1>Manual Mantis</h1>
+    <div class="sub">Para colaboradores: cómo visitar, qué preguntar, cómo responder y qué datos sí podemos decir.</div>
+  </div>
+  <button id="theme" aria-label="Cambiar modo claro u oscuro">Modo claro</button>
+</div>
+
+<nav class="nav" id="nav">
+  <button data-s="inicio" aria-current="true">Inicio</button>
+  <button data-s="antes">Antes de llegar</button>
+  <button data-s="speech">Speech de visita</button>
+  <button data-s="smart">Smart questions</button>
+  <button data-s="objeciones">Objeciones</button>
+  <button data-s="comprar">Por qué comprar</button>
+  <button data-s="datos">Datos con fuente</button>
+  <button data-s="storytelling">Storytelling</button>
+  <button data-s="postventa">Post-venta</button>
+  <button data-s="nodecir">Qué no decir</button>
+  <button data-s="checklist">Checklist</button>
+  <button data-s="enlaces">Enlaces</button>
+</nav>
+
+<!-- INICIO -->
+<section class="sec on" id="s-inicio">
+  <h2>Cómo usar este manual</h2>
+  <div class="box">
+    <p>Este manual sigue el orden de una visita. Úsalo antes de llegar, durante la conversación y al cerrar.</p>
+    <ol>
+      <li><b>Antes de llegar:</b> revisa la ficha de Google del negocio y prepara los enlaces.</li>
+      <li><b>En la visita:</b> sigue el speech, usa 5 o 6 preguntas en total y responde las objeciones.</li>
+      <li><b>Al cerrar:</b> repasa el checklist y deja una fecha de seguimiento si la respuesta es no.</li>
+    </ol>
+  </div>
+  <div class="note"><b>Cómo leer las cajas.</b> Texto normal = lo que se dice. Caja naranja = frase que puede usarse, pero con cuidado: lleva su riesgo y la versión segura. Caja verde = versión segura que se dice siempre que la naranja sea cuestionada.</div>
+  <div class="box">
+    <b>Reglas que no se rompen</b>
+    <ul>
+      <li>Si el cliente no lo dijo, no lo menciones.</li>
+      <li>No bajes el precio. Si pide descuento, explica el valor.</li>
+      <li>Si no sabes algo, di: «lo confirmo y le escribo». No inventes.</li>
+      <li>Si el cliente dice que no, pregunta una vez: ¿qué le haría falta para decidir? y agenda seguimiento con fecha.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ANTES -->
+<section class="sec" id="s-antes">
+  <h2>Antes de llegar</h2>
+  <div class="box">
+    <ul>
+      <li>Revisa la ficha de Google del negocio. Si algo está mal (horario, fotos, categoría), anótalo para decirlo como oportunidad, no como crítica.</li>
+      <li>Ten listo el radar de la zona y del giro. La cifra que vas a mencionar debe salir del radar.</li>
+      <li>Ten listo el simulador con el nombre del negocio y los tres enlaces de la sección Enlaces.</li>
+      <li>Lleva el contrato y el anexo. Si el cliente pide una garantía, lee la cláusula; no la improvises.</li>
+      <li>Di tu nombre al inicio y quién atiende.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SPEECH -->
+<section class="sec" id="s-speech">
+  <h2>Speech de visita</h2>
+
+  <h3>1. Apertura</h3>
+  <div class="say">"Buenas tardes, ¿se encuentra el dueño o encargado? Soy [tu nombre] de Mantis Digital Agency. Nuestro estudio de mercado ubicó a su negocio muy potencialmente calificado entre su sector, y por eso venimos a proponerle una alianza digital estratégica. Solo formamos alianza con un número muy limitado de negocios para no canibalizar entre competencias. Hoy hay mucho tráfico digital en su mercado que casi nadie ha reclamado, queremos que con nuestra colaboración usted y nosotros nos quedemos con la mayor parte antes que su competencia lo haga. Esta alianza busca duplicar la facturación mensual de su negocio en menos de dos meses implementando la estrategia de Mantis. ¿Me da 10 minutos para explicárselo?"</div>
+  <div class="note"><b>"Nuestro estudio de mercado ubicó a su negocio muy potencialmente calificado entre su sector."</b><br><b>Riesgo:</b> si el cliente pregunta por qué, no hay respuesta verificable.<br><b>Versión segura:</b> "Revisamos negocios de [giro] en [zona] y el suyo tiene buen potencial para aparecer mejor." Si el radar da un dato para su giro, úsalo.</div>
+  <div class="note"><b>"Para no canibalizar entre competencias."</b><br><b>Riesgo:</b> suena a exclusividad por sector, que no está definida.<br><b>Versión segura:</b> "Solo formamos alianza con un número muy limitado de negocios: uno por giro y zona."</div>
+  <div class="note"><b>"Hoy hay mucho tráfico digital en su mercado que casi nadie ha reclamado."</b><br><b>Riesgo:</b> solo se dice si el radar lo muestra para su giro y zona.<br><b>Versión segura:</b> "Según nuestro radar, en [zona] hay búsquedas en [giro] que hoy se queda quien aparece primero."</div>
+  <div class="note"><b>"Quedemos con la mayor parte antes que su competencia lo haga."</b><br><b>Riesgo:</b> presión competitiva sin dato que la respalde.<br><b>Versión segura:</b> se dice como ambición, no como resultado: "Queremos que usted aparezca antes de que lo haga su competencia."</div>
+  <div class="note"><b>"Esta alianza busca duplicar la facturación mensual de su negocio en menos de dos meses."</b><br><b>Riesgo:</b> es un resultado que no controlamos, y el cliente lo usará para medirnos. La garantía escrita (entrega en 7 días y devolución de lo pagado) no lo cubre. Se mantiene como decisión tomada; si el cliente pregunta cómo se mide, responde: "Lo que sí garantizamos es la entrega y el seguimiento; las ventas dependen de su servicio."</div>
+  <div class="note"><b>"Usted ya construyó el negocio; nosotros ponemos la tecnología para que más gente lo encuentre."</b><br><b>Cuidado:</b> "nosotros ponemos" puede sonar a regalo. Si el cliente lo toma así: "Usted pone su negocio y su inversión; nosotros ponemos el método, la construcción del sitio y el seguimiento."</div>
+
+  <h3>2. Descubrir el dolor</h3>
+  <p class="tip">Antes de explicar el paquete, el cliente habla de su dolor. Escucha sin interrumpir y repite el dolor con sus palabras.</p>
+  <div class="say">"¿Qué quiere lograr con su negocio este año?"<br>"¿Qué ha hecho antes para que lo encuentren?"<br>"¿Qué es lo que más le ha frenado hasta hoy para resolver esto?"</div>
+  <div class="safe">Para cerrar el bloque: "Entonces lo que más le pesa es [dolor], ¿verdad?" Espera el sí antes de seguir.</div>
+
+  <h3>3. Diagnóstico de retorno <span class="tag">QR 1</span></h3>
+  <div class="say">"Primero, veamos lo que su negocio podría sumar con clientes nuevos por digital." (Abre el QR con el cliente.)</div>
+  <div class="say">"¿Cuál es el ticket promedio de cada cliente suyo?" (Lo captura en el QR.)</div>
+  <div class="say">"Con sus datos, supongamos [número] clientes nuevos al mes que lleguen gracias a su estructura digital. Con su ticket, eso son [ticket] × [número]. Ese número sale de lo que usted nos dio."</div>
+  <div class="note"><b>"Lo que su negocio ya vale."</b> Suena a valuación. Versión segura: "Lo que su negocio podría sumar con clientes nuevos por digital."</div>
+  <div class="note"><b>"Retorno estimado no estándar"</b> (texto del QR). Cámbialo por "estimación con sus datos" antes de presentarlo.</div>
+  <div class="note"><b>"Una persona nueva al día."</b> Es un supuesto, no nuestra promesa. Si el cliente dice otro número, se usa el suyo.</div>
+  <div class="note"><b>"Estimado, no proyección."</b> El diagnóstico no es una proyección de Mantis. Dilo una vez y úsalo siempre.</div>
+
+  <h3>4. Así es hoy, sin nosotros</h3>
+  <div class="say">"Cada mes sin que lo encuentren, esa venta se queda con quien sí aparece. Su negocio ya tiene lo más difícil: el producto y los clientes que confían en él. Lo que falta es un paso."</div>
+  <div class="note"><b>"Ese dinero se lo lleva su competencia."</b> Presión competitiva sin dato que lo respalde. Versión segura: "Quien aparece primero se queda con esos clientes."</div>
+  <div class="say">"Hoy, si el cliente lo busca y no lo encuentra, compra en otro lado."</div>
+  <div class="note"><b>"Le compra a otro."</b> Es una descripción del comportamiento, no una estadística. Si el cliente lo discute: "Si no lo encuentran, esa venta se va a quien sí aparece."</div>
+
+  <h3>5. Radar de oportunidad <span class="tag">QR 2</span></h3>
+  <div class="say">"¿Quién aparece cuando lo buscan a usted?" (Abre el radar con su giro y zona.)</div>
+  <div class="say">"Según nuestro radar, que junta varias fuentes y las cita aquí, en [zona] se buscan [cifra] al mes en [giro]. Hoy esa demanda se la queda quien aparece primero."</div>
+  <div class="safe">El cliente hace la cuenta con nosotros. No le decimos cuánto va a ganar.</div>
+  <div class="note"><b>"Ese lugar no se queda vacío."</b> Se dice si el radar lo muestra. Si no lo muestra, no se dice. Alguien en su giro ya lo está ocupando; la pregunta es si es usted o no.</div>
+  <div class="note"><b>"Un 5% es una gran ganancia."</b> Se dice solo si la cifra sale de sus propios números y del radar. Si el radar muestra 2 millones, el cliente debe ver que la parte es suya, no del mercado completo.</div>
+  <div class="note"><b>"Tráfico digital que casi nadie ha reclamado."</b> Solo se dice si el radar lo muestra para su giro y zona. Siempre di "según nuestro radar".</div>
+
+  <h3>6. Así llega un cliente nuevo</h3>
+  <div class="say">"Así llega un cliente nuevo: lo busca en Google o en una IA, encuentra su sitio, le escribe o agenda, y llega a su negocio. Mientras usted atiende, su sitio sigue trabajando."</div>
+  <div class="note"><b>"Los motores de IA se basan en negocios con muy buena estructura digital."</b> Se dice como tendencia: "Google y las IA no siempre muestran al mejor negocio; muchas veces muestran al que mejor se ve armado: sitio claro, ficha completa, presencia consistente y reseñas."</div>
+
+  <h3>7. Método y simulador <span class="tag">QR 3</span></h3>
+  <div class="say">"Trabajamos en tres pasos: diagnóstico, construcción y acompañamiento. En 7 días desde que nos entrega sus materiales, su sitio está listo. Véalo con su propio nombre: esto es cómo se vería su sitio."</div>
+  <div class="note"><b>"Esta semana."</b> La presentación dice "esta semana"; el contrato dice 7 días desde que llegan los materiales completos. Usa siempre el contrato.</div>
+  <div class="note"><b>"Plantilla."</b> No se usa nunca. Siempre "cómo se vería su sitio".</div>
+  <div class="note"><b>"Un sitio que genera credibilidad aumenta hasta X% la probabilidad de compra."</b> Sin fuente verificada, no se dice. Versión segura: "Un sitio que transmite confianza hace que el cliente llegue decidido, no con dudas."</div>
+
+  <h3>8. Lo que construimos</h3>
+  <div class="say">"Esto es lo que construimos para usted: para que su negocio sea más visible y para que destaque digitalmente en su mercado. Trabajamos con un solo negocio por giro y zona."</div>
+  <div class="note"><b>"Monopolizar digitalmente su nicho."</b> Suena a quitarle espacio a otros y a una exclusividad que el contrato no define en la visita. Versión segura: "destacar digitalmente en su mercado".</div>
+
+  <h3>9. Bonos incluidos</h3>
+  <table>
+    <tr><th>Concepto</th><th>Qué se dice</th><th>Valor de referencia</th></tr>
+    <tr><td>Sitio web profesional</td><td>Diseñado para su giro, rápido en cualquier celular y listo para que lo encuentren.</td><td>$9,500</td></tr>
+    <tr><td>Mantenimiento y cambios, 12 meses</td><td>Un año de ajustes: precios, fotos y horarios. Usted nos pide el cambio y nosotros lo hacemos.</td><td>$7,800</td></tr>
+    <tr><td>Base técnica</td><td>Dominio el primer año ($300) y hosting con seguridad ($3,200).</td><td>$3,500</td></tr>
+    <tr><td>Guía de primeros pasos</td><td>Una guía en PDF para sacarle provecho a su sitio desde el primer día.</td><td>$450</td></tr>
+    <tr><td>Presencia física conectada</td><td>Códigos QR para su mostrador que llevan directo a su sitio.</td><td>$350</td></tr>
+    <tr><td>Optimización de Google Maps</td><td>Trabajamos para que lo encuentren cuando alguien busca su giro en Maps.</td><td>$1,500</td></tr>
+    <tr><td>Dirección de contenido de marca</td><td>Estrategia de 4 posts al mes, uno por semana, para que usted los publique.</td><td>$3,500</td></tr>
+  </table>
+  <div class="note"><b>"Esto ya es suyo, además de todo lo anterior."</b> Solo se usa en los bonos 2 a 4, que son parte del paquete.</div>
+  <div class="note"><b>"Todo lo que recibe."</b> El detalle de piezas y bonos se muestra en la tabla. No digas "todo lo que se vale".</div>
+  <div class="note"><b>"Que sea la primera opción de Maps."</b> No se puede garantizar. Versión segura: "Trabajamos para que lo encuentren cuando alguien busca su giro en Maps."</div>
+  <div class="note"><b>Valores de referencia.</b> Los valores suman $26,600. Di "valor de referencia", no "valor de mercado".</div>
+
+  <h3>10. Inversión, cupo y garantía</h3>
+  <div class="say">"Su inversión es de $6,790 con IVA incluido. Puede apartar con el 50%, $3,395, y el resto al entregar. Trabajamos con 22 negocios al año para cuidar cada alianza."</div>
+  <div class="safe">Desde el segundo año: $1,974 al año, por dominio y mantenimiento. Dilo siempre, sin esconderlo.</div>
+  <div class="say">"Usted no corre el riesgo de la entrega: si no cumplimos en 7 días desde que recibimos sus materiales, le devolvemos lo que haya pagado. Y durante 12 meses, los cambios de su sitio van incluidos."</div>
+  <div class="note"><b>"Todo lo que le prometemos."</b> No se dice en la visita. Solo se garantiza lo que está en el anexo del contrato: entrega, plazos y devolución.</div>
+
+  <h3>11. Mentoría y después</h3>
+  <div class="say">"Nuestro modelo no es vender esta estrategia digital, sino formar una alianza a largo plazo, con seguimiento y reportes medibles. Después de entregarle su sitio, tendrá la mentoría Método y sistema para escalar a 8x tus utilidades, de 289 USD, con un mentor que le explica cómo sacarle más provecho a su negocio en digital. Ahí vemos juntos cómo seguir, si le interesa."</div>
+  <div class="note"><b>"Escalar a 8x tus utilidades."</b> Es el nombre del método, es decir, su objetivo. No se dice como resultado que va a pasar ni se promete. No tenemos casos verificados.</div>
+  <div class="note"><b>"Sesión completamente gratuita."</b> La mentoría va incluida en el paquete; "gratuita" suena a regalo. Versión segura: "incluida en su paquete".</div>
+  <div class="note"><b>"Ganar, ganar."</b> Se puede decir, pero el cliente debe sentir que es una alianza real: él también aporta algo (su negocio, su inversión y su tiempo).</div>
+  <div class="safe"><b>Mensualidad y comisión:</b> no se mencionan en la visita. Se ofrecen después de la mentoría, y solo si el negocio las necesita. Se acuerdan por escrito, aparte de los $6,790.</div>
+
+  <h3>12. Cierre y formas de pago</h3>
+  <div class="say">"Usted decide cómo pagar. ¿Prefiere apartar hoy con transferencia, tarjeta de crédito o débito, o en efectivo?"</div>
+  <div class="say">"¿Qué le haría falta para decidir hoy?"</div>
+  <div class="say">"Si le parece bien, aparto su lugar con el 50%, $3,395, y en 7 días desde que nos manda sus materiales empezamos."</div>
+  <div class="safe">El precio es el mismo con cualquier forma de pago. Dilo si preguntan.</div>
+  <div class="note"><b>"Si no contrata con nosotros, contratará a otro."</b> Es un recordatorio para el equipo, no para el cliente. No se dice en la visita.</div>
+
+  <h3>13. Frases que se dicen con cuidado</h3>
+  <div class="note"><b>"Usted se lleva un cacho de ese pastel."</b><br><b>Riesgo:</b> la demanda del radar no es ingreso.<br><b>Versión segura:</b> "Según el radar, una parte de esa demanda puede llegar a su negocio si aparece cuando lo buscan. Hagamos la cuenta con sus números."</div>
+  <div class="note"><b>"Todo ese market cap lo puede capitalizar."</b><br><b>Riesgo:</b> término financiero que el cliente no usa.<br><b>Versión segura:</b> "Toda esa demanda que busca [giro] en [zona] es la que su negocio puede atender."</div>
+  <div class="note"><b>"Trabaje menos y gane más."</b><br><b>Riesgo:</b> promesa de resultado.<br><b>Versión segura:</b> "Usted atiende a quien ya llegó; nosotros nos encargamos de que lleguen más."</div>
+  <div class="note"><b>"Que duerma tranquilo."</b><br><b>Riesgo:</b> promesa de bienestar.<br><b>Versión segura:</b> "Usted se queda con su negocio; nosotros nos encargamos de que el sitio esté listo y de los cambios durante un año."</div>
+  <div class="note"><b>"Facturan el triple."</b><br><b>Riesgo:</b> dato sobre terceros que no podemos comprobar.<br><b>Versión segura:</b> "En [zona] hay negocios de [giro] con menos experiencia que el suyo que aparecen primero en Google, porque tienen ficha completa y sitio. Eso se lo puedo enseñar en vivo."<br><span class="tip">Solo se dice si revisaste la búsqueda en vivo ese día.</span></div>
+  <div class="note"><b>"Cuesta menos que pagarle a un empleado, trabaja 24 horas y no lo demanda."</b><br><b>Riesgo:</b> compara un pago único con un sueldo, y el sitio no atiende llamadas. Suena a broma sobre personas.<br><b>Versión segura:</b> "Su sitio y su ficha están abiertos a toda hora para que lo encuentren, aunque usted esté cerrado. Quien atiende sigue siendo usted."</div>
+</section>
+
+<!-- SMART QUESTIONS -->
+<section class="sec" id="s-smart">
+  <h2>Smart questions</h2>
+  <div class="box">
+    <p><b>Cuántas usar:</b> 5 o 6 preguntas en total por visita. Si haces más, la conversación se vuelve interrogatorio.</p>
+    <ul>
+      <li><b>Universales:</b> 3 o 4 como máximo.
+        <ul>
+          <li>Abre con la 1: "¿Cómo empezó este negocio?" para que sienta que lo escuchamos.</li>
+          <li>Usa la 3: "¿Cómo le llegan hoy los clientes nuevos?" para saber cómo funciona la captación.</li>
+          <li>La 11 o la 15 solo si ya hay confianza. Son de miedo y de dolor de fondo.</li>
+          <li>Las de FOMO (la 6 y la 7) mejor como búsqueda en vivo, no como pregunta abstracta.</li>
+        </ul>
+      </li>
+      <li><b>Del giro:</b> 2 o 3, en el orden que aparece abajo. Las de nivel 4 o 5 solo cuando el cliente ya se abrió.</li>
+    </ul>
+    <p class="tip">Los niveles van de 1 (superficial) a 5 (lo que duele). Sube un escalón solo cuando el cliente ya habló del anterior. Nunca hagas más de dos preguntas seguidas de nivel 4 o 5.</p>
+  </div>
+
+  <h3>Universales</h3>
+  <div class="card"><details><summary>Universales completas (elige 3 o 4)</summary><div class="in">
+    <table>
+      <tr><th>#</th><th>Pregunta</th><th>Nivel</th><th>Qué busca</th></tr>
+      <tr><td>1</td><td>¿Cómo empezó este negocio?</td><td>1</td><td>Escuchar</td></tr>
+      <tr><td>2</td><td>¿Qué es lo que más le gusta de su trabajo?</td><td>1</td><td>Reconocer lo que ya construyó</td></tr>
+      <tr><td>3</td><td>¿Cómo le llegan hoy los clientes nuevos?</td><td>2</td><td>Saber cómo funciona la captación</td></tr>
+      <tr><td>4</td><td>¿Qué le quita más tiempo cada semana?</td><td>2</td><td>Dolor operativo</td></tr>
+      <tr><td>5</td><td>¿Cuántas personas le han preguntado algo que no pudo contestar a tiempo?</td><td>3</td><td>Pérdida real</td></tr>
+      <tr><td>6</td><td>Si mañana alguien busca [giro] en [colonia] y aparecen tres negocios, ¿qué cree que le hace elegir uno?</td><td>3</td><td>FOMO en búsqueda en vivo</td></tr>
+      <tr><td>7</td><td>¿Usted ha buscado su propio negocio en Google este mes? ¿Qué encontró?</td><td>3</td><td>Que descubra lo que ve el cliente</td></tr>
+      <tr><td>8</td><td>¿Qué es lo que más le ha frenado hasta hoy para que el negocio crezca?</td><td>2</td><td>La objeción real</td></tr>
+      <tr><td>9</td><td>¿Qué clientes le gustaría tener que hoy no le llegan?</td><td>3</td><td>Aspiración</td></tr>
+      <tr><td>10</td><td>¿Qué pasaría con su negocio si usted no pudiera atender un mes?</td><td>4</td><td>Miedo a depender de una sola persona</td></tr>
+      <tr><td>11</td><td>¿Qué es lo que más le preocupa que pase en el negocio el próximo año?</td><td>4</td><td>Miedo a lo que viene</td></tr>
+      <tr><td>12</td><td>¿Qué le daría miedo si un cliente fijo se va con otro?</td><td>4</td><td>Miedo a perder clientes de siempre</td></tr>
+      <tr><td>13</td><td>¿Qué tendría que pasar en un año para que sienta que valió la pena?</td><td>4</td><td>Visión; conecta con la mentoría</td></tr>
+      <tr><td>14</td><td>¿Qué le preocupa cuando piensa en cómo está hoy el negocio frente a los que empiezan?</td><td>5</td><td>Solo con confianza</td></tr>
+      <tr><td>15</td><td>¿Qué es lo que de verdad le duele de todo esto?</td><td>5</td><td>El dolor de fondo; escuchar sin resolver todavía</td></tr>
+    </table>
+  </div></details></div>
+
+  <h3>Por giro</h3>
+  <p class="tip">Cada giro trae 2 o 3 preguntas. Combínalas con las universales para llegar a 5 o 6 en total.</p>
+
+  <div class="card"><details><summary>Restaurantes y taquerías <span class="tag">alta cocina · taquerías sin mapa</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 1</span> ¿Cuántos clientes nuevos le llegan de alguien que no lo conocía?</li>
+    <li><span class="lvl">Nivel 2</span> ¿Qué le preguntan más los clientes que llegan por primera vez?</li>
+    <li><span class="lvl">Nivel 4</span> ¿Qué pasa en su negocio los días que no se llena?</li>
+  </ol></div></details></div>
+
+  <div class="card"><details><summary>Talleres mecánicos <span class="tag">especializados · mecánica general</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> Cuando le recomiendan, ¿la persona lo busca en Google antes de llamar?</li>
+    <li><span class="lvl">Nivel 3</span> ¿Cuántos trabajos rechaza al mes por falta de tiempo o espacio?</li>
+    <li><span class="lvl">Nivel 4</span> ¿Qué le preocupa que el cliente se vaya a otro taller porque no lo encontró a tiempo?</li>
+  </ol></div></details></div>
+
+  <div class="card"><details><summary>Salud: consultorios, dentistas y fisioterapia <span class="tag">dental y fisio · cirugía y estética médica</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Sus pacientes le buscan después en Google o solo por recomendación?</li>
+    <li><span class="lvl">Nivel 3</span> ¿Qué pregunta el paciente antes de agendar que hoy no tiene respondida en ningún lado?</li>
+    <li><span class="lvl">Nivel 4</span> ¿Qué teme que digan los pacientes en internet que usted no pueda responder?</li>
+  </ol><div class="note"><b>Cuidado:</b> no mencionar reseñas dentales ni promesas de salud. Revisión legal antes de publicar.</div></div></details></div>
+
+  <div class="card"><details><summary>Salones y estéticas <span class="tag">sin mapa</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Quién llega a su perfil y termina agendando?</li>
+    <li><span class="lvl">Nivel 3</span> ¿Cuántas citas se le caen por no poder confirmar en línea?</li>
+    <li><span class="lvl">Nivel 4</span> ¿Qué le da miedo perder si una clienta fija se va?</li>
+  </ol></div></details></div>
+
+  <div class="card"><details><summary>Salones de eventos y wedding planners <span class="tag">verde</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Cómo le llegan hoy los eventos: por referencia, redes o búsqueda?</li>
+    <li><span class="lvl">Nivel 4</span> ¿Cuántas fechas se le quedaron libres el año pasado?</li>
+    <li><span class="lvl">Nivel 5</span> ¿Qué le preocupa que la pareja compare con otro salón antes de llamarle?</li>
+  </ol></div></details></div>
+
+  <div class="card"><details><summary>Gimnasios <span class="tag">sin mapa</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Qué es lo primero que busca alguien antes de inscribirse?</li>
+    <li><span class="lvl">Nivel 3</span> ¿Cuántas personas le preguntaron horarios que no encontraron en línea?</li>
+    <li><span class="lvl">Nivel 5</span> ¿Cuánta gente se va después del primer mes, y por qué cree que se va?</li>
+  </ol></div></details></div>
+
+  <div class="card"><details><summary>Tiendas de ropa <span class="tag">sin mapa</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Sus clientes llegan de paso o buscan la tienda antes de venir?</li>
+    <li><span class="lvl">Nivel 2</span> ¿Qué colección le gustaría que vieran antes de visitarla?</li>
+    <li><span class="lvl">Nivel 5</span> ¿Qué le da miedo que pase con la temporada si no la muestra a tiempo?</li>
+  </ol></div></details></div>
+
+  <div class="card"><details><summary>Ferreterías y tlapalerías <span class="tag">sin mapa</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Quién le compra hoy: el vecino o el contratista que llega a la zona?</li>
+    <li><span class="lvl">Nivel 3</span> ¿Cuántos contratistas nuevos le llegaron el último año?</li>
+    <li><span class="lvl">Nivel 4</span> ¿Qué le preocupa que el contratista nuevo compre en otra zona porque no lo encontró?</li>
+  </ol></div></details></div>
+
+  <div class="card"><details><summary>Veterinarias <span class="tag">alta especialidad · general sin mapa</span></summary><div class="in">
+    <p><b>Orden sugerido:</b> cómo llegan los clientes, lo que pasa fuera de horario y lo que quiere mostrar.</p>
+    <ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Cómo le encuentran hoy los dueños de mascotas nuevos en la zona?</li>
+    <li><span class="lvl">Nivel 3</span> ¿Qué pasa con los clientes que llegan de noche o en fin de semana?</li>
+    <li><span class="lvl">Nivel 2</span> ¿Qué servicio le piden más y le gustaría que se supiera?</li>
+    <li><span class="lvl">Nivel 5</span> ¿Qué le preocupa que alguien con una urgencia no lo encuentre a tiempo?</li>
+  </ol><div class="note"><b>Cuidado:</b> la pregunta de urgencias solo si el cliente ya se abrió. No hacer diagnósticos ni promesas de cura.</div></div></details></div>
+
+  <div class="card"><details><summary>Escuelas de idiomas <span class="tag">ámbar</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Cómo llegan hoy sus alumnos: recomendación, redes o búsqueda?</li>
+    <li><span class="lvl">Nivel 2</span> ¿Qué grupos le gustaría llenar en el próximo ciclo?</li>
+    <li><span class="lvl">Nivel 4</span> ¿Qué le preocupa que un grupo se quede vacío y no tenga cómo llenarlo a tiempo?</li>
+  </ol></div></details></div>
+
+  <div class="card"><details><summary>Hospedaje <span class="tag">boutique · otros sin mapa</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Qué porcentaje de sus reservas le llega por plataforma?</li>
+    <li><span class="lvl">Nivel 2</span> ¿Qué le gustaría reservar directo, sin intermediario?</li>
+    <li><span class="lvl">Nivel 4</span> ¿Qué le preocupa de depender de una sola plataforma?</li>
+  </ol></div></details></div>
+
+  <div class="card"><details><summary>Farmacias <span class="tag">revisión legal previa</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Cómo le encuentra la gente que se muda o llega de paso?</li>
+    <li><span class="lvl">Nivel 2</span> ¿Qué le preguntan más seguido los clientes nuevos?</li>
+    <li><span class="lvl">Nivel 2</span> ¿Qué servicio le gustaría que supieran que da además de medicamentos?</li>
+  </ol><div class="note"><b>No hacer</b> preguntas sobre promociones de medicamentos hasta tener la revisión legal.</div></div></details></div>
+
+  <div class="card"><details><summary>Constructoras e inmobiliarias <span class="tag">lujo o remodelación alta</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Cómo llegan sus clientes: por referencia, por inmobiliaria o por búsqueda?</li>
+    <li><span class="lvl">Nivel 2</span> ¿Cuánto tardan sus clientes en decidir?</li>
+    <li><span class="lvl">Nivel 4</span> ¿Qué le preocupa perder por no tener un portafolio que muestre antes de la cotización?</li>
+  </ol></div></details></div>
+
+  <div class="card"><details><summary>Florerías <span class="tag">sin mapa</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Qué fechas le dejan más ventas?</li>
+    <li><span class="lvl">Nivel 3</span> ¿Cuántos pedidos le llegan de gente que nunca lo ha visto?</li>
+    <li><span class="lvl">Nivel 5</span> ¿Qué le preocupa que se pierda cuando llega una fecha especial y no alcanza?</li>
+  </ol></div></details></div>
+
+  <div class="card"><details><summary>Lavanderías <span class="tag">sin mapa</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Sus clientes saben que hay recogida y entrega?</li>
+    <li><span class="lvl">Nivel 3</span> ¿Qué clientes le gustaría tener que hoy no pasan por aquí?</li>
+    <li><span class="lvl">Nivel 4</span> ¿Qué le preocupa que un cliente de paso no lo encuentre y vaya a otra?</li>
+  </ol></div></details></div>
+
+  <div class="card"><details><summary>Despachos profesionales <span class="tag">arquitectura · contadores · abogados y fiscal internacional</span></summary><div class="in"><ol class="ruta">
+    <li><span class="lvl">Nivel 2</span> ¿Cómo le llegan hoy sus clientes nuevos?</li>
+    <li><span class="lvl">Nivel 2</span> ¿Qué le gustaría que aparezca cuando alguien busca su nombre?</li>
+    <li><span class="lvl">Nivel 4</span> ¿Qué le preocupa que un cliente busque a alguien más por no encontrarlo a usted?</li>
+  </ol><div class="note"><b>Cuidado:</b> sin promesas de resultados ni casos ganados. Revisar reglas de honorarios y publicidad de cada gremio.</div></div></details></div>
+
+  <h3>Cómo se conversa</h3>
+  <div class="box">
+    <ul>
+      <li>Escucha la respuesta completa antes de la siguiente pregunta.</li>
+      <li>Repite el dolor con sus palabras: "Entonces lo que más le pesa es…"</li>
+      <li>No leas la lista como guion. No le digas qué debería hacer. No nombres a la competencia.</li>
+      <li>No preguntes sobre sueldo, deudas, familia ni salud personal.</li>
+    </ul>
+  </div>
+  <h3>Si el cliente responde así</h3>
+  <table>
+    <tr><th>Si dice…</th><th>Usted responde…</th></tr>
+    <tr><td>"No tengo tiempo."</td><td>"Entonces lo que más le pesa es el tiempo. ¿Qué le quitaría de encima primero?"</td></tr>
+    <tr><td>"Ya tengo clientes."</td><td>"¿Y qué pasaría si uno de esos clientes ya no llega? ¿Cómo le llegarían los nuevos?"</td></tr>
+    <tr><td>"Me preocupa el precio."</td><td>"¿Le preocupa cuánto paga o cuándo paga? Con sus números lo vemos juntos."</td></tr>
+    <tr><td>"Lo tengo que pensar."</td><td>"Claro. ¿Qué parte le gustaría revisar con más calma?"</td></tr>
+    <tr><td>"Ya probé algo y no funcionó."</td><td>"¿Qué probó y qué le faltó? Así sabemos qué no repetir."</td></tr>
+  </table>
+  <div class="box">
+    <b>FOMO sin mentir</b>
+    <ul>
+      <li><b>Con dato propio:</b> "¿Cuántas personas le preguntaron algo la semana pasada que no pudo contestar?"</li>
+      <li><b>Con búsqueda en vivo:</b> "Busquemos [giro] en [colonia] juntos. ¿Qué es lo primero que ve?"</li>
+      <li><b>Con su aspiración:</b> "Si el próximo año llegaran el doble de clientes, ¿qué tendría que cambiar primero?"</li>
+    </ul>
+    <div class="note"><b>No usar:</b> "su competencia ya le está ganando" (sin dato, es una acusación); "mientras espera, otro se queda con sus clientes" (es presión, no pregunta); "este precio se va hoy" (no hay fecha real).</div>
+  </div>
+  <div class="box">
+    <b>Lo que no se pregunta</b>
+    <ul>
+      <li>Sueldo, deudas, finanzas personales, familia o salud propia o de la familia.</li>
+      <li>Nombres de competidores o comparaciones con ellos.</li>
+      <li>Qué pasaría "si no lo hace", en tono de amenaza.</li>
+      <li>Preguntas cerradas que cortan la plática: "¿Le interesa?", "¿Lo compra o no?", "¿Cuánto tiene para invertir?"</li>
+    </ul>
+    <p>Si el cliente no responde: "Entiendo. Si quiere, lo platicamos otro día." Anota el tema que evitó; también es información para la siguiente visita.</p>
+  </div>
+</section>
+
+<!-- OBJECIONES -->
+<section class="sec" id="s-objeciones">
+  <h2>Objeciones</h2>
+  <p class="tip">Para usar en la visita, no para leer en voz alta. Primero descubre la frase exacta del cliente; después responde corto.</p>
+  <input class="search" id="q" type="search" placeholder="Buscar: caro, Facebook, recomendación, Maps, cancelar…" aria-label="Buscar objeción">
+  <div class="chips" id="chips" role="group" aria-label="Filtrar por giro"></div>
+  <div id="list"></div>
+</section>
+
+<!-- POR QUÉ COMPRAR -->
+<section class="sec" id="s-comprar">
+  <h2>Por qué comprar</h2>
+  <div class="box">
+    <h3 style="margin-top:0">Las cuatro preguntas que el cliente se hace</h3>
+    <table>
+      <tr><td><b>¿Por qué es para mí?</b></td><td>Hoy el cliente que no lo conoce lo busca desde el celular antes de llamar. Si no lo encuentra con confianza, la venta se va a quien sí aparece. <span class="tip">INEGI ENDUTIH 2024: 97.2% de los usuarios de internet se conecta desde el celular.</span></td></tr>
+      <tr><td><b>¿En qué me ayuda?</b></td><td>Le entregamos un sitio listo en 7 días desde que nos manda sus materiales, ficha de Google optimizada, códigos QR, guía de primeros pasos y cambios incluidos durante 12 meses. Usted no tiene que aprender nada.</td></tr>
+      <tr><td><b>¿Cómo me trae clientes?</b></td><td>Quien lo busca encuentra horario, servicios y cómo contactarlo, y decide confiar antes de llegar. Cuántos clientes lleguen depende de cuántos lo busquen y de cómo lo atienda usted cuando llegan.</td></tr>
+      <tr><td><b>¿Me sale caro no hacerlo?</b></td><td>Sí, si sus propios números lo muestran. La cuenta es esta: <b>ingreso que hoy no llega cada mes = clientes nuevos que no lo encuentran × ticket promedio.</b> <span class="tip">Es una estimación con sus datos, no una promesa.</span></td></tr>
+    </table>
+  </div>
+  <h3>Cómo se usa la cuenta en la visita</h3>
+  <ol>
+    <li>Pregunte primero: ¿cuánto le deja un cliente en promedio?</li>
+    <li>Luego: ¿cuántos clientes nuevos le gustaría tener al mes?</li>
+    <li>Haga la multiplicación juntos, en papel o en el QR. Él escribe el número.</li>
+    <li>Diga: "Esto es lo que hoy no llega. Lo que decide es si quiere que empiece a llegar."</li>
+  </ol>
+  <p class="tip">Si el cliente dice que no le interesa, no insista. La cuenta sirve para decidir, no para presionar.</p>
+  <div class="box">
+    <b>Qué incluye el paquete (lo que sí puede decir)</b>
+    <p>Sitio web para su giro, hecho para celular y computadora · Cambios durante 12 meses, incluidos los de temporada · Dominio del primer año, hosting y seguridad · Guía en PDF · Códigos QR · Optimización de Google Maps · 4 posts al mes para que usted los publique.</p>
+    <p class="tip">Inversión: $6,790 con IVA incluido. Anticipo del 50%: $3,395. Renovación desde el segundo año: $1,974 al año.</p>
+  </div>
+
+  <h3>Por giro</h3>
+  <p class="tip">Los ejemplos usan cifras ficticias. Reemplázalas por los números que dé el cliente.</p>
+
+  <div class="card"><details><summary>1. Restaurantes y taquerías</summary><div class="in">
+    <p><b>Por qué es para él:</b> quien busca dónde comer mira fotos, menú y horario antes de salir. <span class="tip">INEGI 2024: 33% de los usuarios de internet compra alimentos en línea.</span></p>
+    <p><b>En qué le ayuda:</b> sitio con menú, fotos, horario y botón de WhatsApp para pedidos; ficha de Maps; QR de mesa; posts para publicar.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 20 clientes nuevos × $250 de ticket = $5,000 al mes que no llegan.</p>
+    <div class="say">"Hoy su menú no lo ve nadie que pasa por la zona. Con su sitio, lo ve quien busca dónde comer y decide antes de salir."</div>
+    <div class="note"><b>Cuidado:</b> no decir porcentajes de comisión de apps. No prometer pedidos.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>2. Talleres mecánicos</summary><div class="in">
+    <p><b>Por qué es para él:</b> cuando alguien le recomienda un taller, lo busca antes de llamar. Si no encuentra nada, la recomendación pierde fuerza. <span class="tip">BrightLocal 2024 (EE.UU.): 75% lee reseñas al investigar negocios locales.</span></p>
+    <p><b>En qué le ayuda:</b> sitio con servicios, horario, teléfono y cotización por WhatsApp; ficha de Maps; QR en el mostrador.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 5 trabajos rechazados al mes × $1,500 = $7,500 al mes en ingresos que no se hacen.</p>
+    <div class="say">"La recomendación lo trae a la puerta. El sitio es lo que le confirma a quien llega que es el taller correcto."</div>
+    <div class="note"><b>Cuidado:</b> no prometer más trabajos. No comparar precios con otros talleres.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>3. Salud: consultorios, dentistas y fisioterapia</summary><div class="in">
+    <p><b>Por qué es para él:</b> su paciente busca información antes de decidir. <span class="tip">FUNSALUD 2025: 59% de los pacientes usa internet para consultar salud (base por confirmar). Médic@ Digital 2024: 45% de los médicos recomienda medios especializados.</span></p>
+    <p><b>En qué le ayuda:</b> sitio con servicios, cómo agendar por WhatsApp, horario y ubicación; ficha de Maps. Menos llamadas para preguntar lo mismo.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 10 citas que no se agendan × $800 de consulta = $8,000 al mes.</p>
+    <div class="say">"Su paciente ya busca antes de llamar. Lo que encuentre tiene que confirmarle que es el lugar correcto."</div>
+    <div class="note"><b>Cuidado:</b> sin promesas médicas, antes y después, ni reseñas como promesa. Revisión legal antes de publicar.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>4. Salones y estéticas</summary><div class="in">
+    <p><b>Por qué es para ella:</b> la clienta nueva agenda desde el celular. El perfil de Instagram no siempre muestra dónde está ni cómo agendar.</p>
+    <p><b>En qué le ayuda:</b> sitio con servicios, precios por rango, agendar por WhatsApp, ubicación y fotos; ficha de Maps.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 8 citas perdidas al mes × $450 = $3,600 al mes.</p>
+    <div class="say">"Su perfil es bonito. Su sitio es lo que la clienta nueva usa para decidir dónde agendar."</div>
+    <div class="note"><b>Cuidado:</b> no prometer fidelidad. No usar fotos de clientas sin permiso.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>5. Salones de eventos y wedding planners</summary><div class="in">
+    <p><b>Por qué es para él:</b> la pareja compara salones y busca con meses de anticipación. El planner también busca antes de recomendar.</p>
+    <p><b>En qué le ayuda:</b> sitio con galería de eventos reales, cotización por WhatsApp o formulario con fecha del evento; ficha de Maps.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 3 fechas libres al año × $35,000 de evento = $105,000 al año.</p>
+    <div class="say">"Cuando la pareja o el planner busca su salón, lo que vea decide si cotiza. Hoy esa búsqueda la hace sin usted."</div>
+    <div class="note"><b>Cuidado:</b> no prometer disponibilidad de fechas que el salón no ha confirmado.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>6. Gimnasios</summary><div class="in">
+    <p><b>Por qué es para él:</b> quien quiere empezar busca horarios y precios antes de ir. Hoy esa información no siempre existe en línea.</p>
+    <p><b>En qué le ayuda:</b> sitio con horarios, clases, precios de inscripción, ubicación y WhatsApp; ficha de Maps con horario correcto.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 5 inscripciones que no llegan × $600 = $3,000 al mes.</p>
+    <div class="say">"Quien busca gimnasio lo hace a las nueve de la noche. Lo que vea ahí decide si llega mañana."</div>
+    <div class="note"><b>Cuidado:</b> las promociones no están en el paquete; confírmelas antes de ofrecerlas. No prometer socios.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>7. Tiendas de ropa</summary><div class="in">
+    <p><b>Por qué es para ella:</b> quien busca la tienda revisa la colección antes de salir. <span class="tip">AMVO 2026 (datos 2025): 71% de los compradores combina tienda física y en línea (por confirmar en amvo.org.mx).</span></p>
+    <p><b>En qué le ayuda:</b> sitio con catálogo de temporada, horario, ubicación y WhatsApp; ficha de Maps con fotos nuevas; cambios de temporada incluidos.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 15 visitas que no llegan × $400 = $6,000 al mes.</p>
+    <div class="say">"Su colección ya está en la tienda. Lo que falta es que la vean antes de salir de casa."</div>
+    <div class="note"><b>Cuidado:</b> marca de agua y logos de marcas no están en el paquete.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>8. Ferreterías y tlapalerías</summary><div class="in">
+    <p><b>Por qué es para él:</b> el contratista que llega a la zona busca dónde comprar y si está abierto. <span class="tip">INEGI 2024: 45.8% de los usuarios de internet compra artículos para el hogar en línea.</span></p>
+    <p><b>En qué le ayuda:</b> sitio con categorías, horario, ubicación y WhatsApp para cotizar; ficha de Maps con horario correcto.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 4 contratistas nuevos que no llegan × $2,000 = $8,000 al mes.</p>
+    <div class="say">"El contratista que llega hoy a la zona busca dónde comprar. Si su ferretería aparece, la compra se va a donde sí aparece."</div>
+    <div class="note"><b>Cuidado:</b> no publicar precios que cambian cada día: cotizar por WhatsApp.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>9. Veterinarias</summary><div class="in">
+    <p><b>Por qué es para él:</b> las urgencias no se programan. Quien tiene una emergencia busca en el momento, a cualquier hora.</p>
+    <p><b>En qué le ayuda:</b> sitio con servicios, horario de urgencias, teléfono y WhatsApp de citas; ficha de Maps.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 6 citas o urgencias que no llegan × $900 = $5,400 al mes.</p>
+    <div class="say">"Una urgencia no se programa. Lo que vea su clínica a esa hora decide a quién llama el dueño."</div>
+    <div class="note"><b>Cuidado:</b> no diagnósticos, no promesas de cura, no promoción de medicamentos. Visitar al responsable médico.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>10. Escuelas de idiomas</summary><div class="in">
+    <p><b>Por qué es para él:</b> el alumno llega por recomendación y luego busca horarios, niveles y precio antes de inscribirse.</p>
+    <p><b>En qué le ayuda:</b> sitio con cursos, horarios, niveles y WhatsApp de inscripción; ficha de Maps.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 4 inscripciones que no llegan × $1,200 = $4,800 al mes.</p>
+    <div class="say">"Su alumno ya habló de usted. Lo que busca después es horario y nivel. Si lo encuentra claro, se inscribe."</div>
+    <div class="note"><b>Cuidado:</b> no prometer certificados ni empleo. Respetar la validez oficial.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>11. Hospedaje</summary><div class="in">
+    <p><b>Por qué es para él:</b> sus huéspedes llegan por plataformas que cobran comisión. Un canal propio le permite recibir reservas directas.</p>
+    <p><b>En qué le ayuda:</b> sitio con habitaciones, fotos, tarifa de referencia y reserva por WhatsApp; ficha de Maps.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 10 noches libres al mes × $1,500 = $15,000 al mes. Solo si tiene noches libres.</p>
+    <div class="say">"Hoy sus huéspedes llegan por plataforma. Con su sitio, algunos pueden reservar directo con usted."</div>
+    <div class="note"><b>Cuidado:</b> no prometer bajar comisiones de plataformas. Las reservas en otra plataforma no se cuentan.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>12. Farmacias <span class="tag">revisión legal previa</span></summary><div class="in">
+    <p><b>Por qué es para él:</b> quien llega de paso o se muda busca farmacia abierta cerca, a cualquier hora.</p>
+    <p><b>En qué le ayuda:</b> sitio con horario, servicios, zona de entrega y WhatsApp; ficha de Maps con horario.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 25 visitas que no llegan × $150 = $3,750 al mes.</p>
+    <div class="say">"Quien busca farmacia abierta lo hace con prisa. Lo que vea en pantalla decide si llega a la suya."</div>
+    <div class="note"><b>Cuidado:</b> sin promociones de medicamentos. No vender este giro sin revisión legal previa.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>13. Constructoras e inmobiliarias</summary><div class="in">
+    <p><b>Por qué es para él:</b> el cliente investiga antes de pedir presupuesto y compara portafolios.</p>
+    <p><b>En qué le ayuda:</b> sitio con portafolio de obras reales (con permiso), cotización por WhatsApp; ficha de Maps.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 1 proyecto al año que no llega × $80,000 = $80,000 al año.</p>
+    <div class="say">"Su cliente ya le pidió referencias. Lo que vea antes de la cotización es lo que lo convence."</div>
+    <div class="note"><b>Cuidado:</b> obras privadas solo con autorización. Ciclo de venta largo.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>14. Florerías</summary><div class="in">
+    <p><b>Por qué es para ella:</b> las fechas especiales concentran búsquedas y pedidos de último momento.</p>
+    <p><b>En qué le ayuda:</b> sitio con fechas especiales (cambios estacionales incluidos), zona de entrega y WhatsApp de pedido; ficha de Maps.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 20 pedidos de una fecha que no llegan × $450 = $9,000 en un solo día.</p>
+    <div class="say">"El día de la fecha se busca rápido. Lo que vea primero es lo que decide el pedido."</div>
+    <div class="note"><b>Cuidado:</b> no prometer existencias.</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>15. Lavanderías</summary><div class="in">
+    <p><b>Por qué es para ella:</b> quien pasa o se muda busca lavandería cerca y revisa horario.</p>
+    <p><b>En qué le ayuda:</b> sitio con horario, servicios, recogida y entrega si la hay; ficha de Maps con horario correcto.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 30 clientes de paso que no llegan × $180 = $5,400 al mes.</p>
+    <div class="say">"Quien busca lavandería cerca lo hace con la ropa en la mano. Si ve horario claro, va."</div>
+    <div class="note"><b>Cuidado:</b> tarifas por kilo: "consulte por WhatsApp".</div>
+  </div></details></div>
+
+  <div class="card"><details><summary>16. Despachos profesionales</summary><div class="in">
+    <p><b>Por qué es para él:</b> el cliente busca su nombre antes de llamar y revisa qué servicios ofrece.</p>
+    <p><b>En qué le ayuda:</b> sitio con servicios y contacto, sin promesas; ficha de Maps; revisión previa de cada texto.</p>
+    <p><b>Lo que le cuesta no decidir:</b> ejemplo: 2 consultas que no llegan × $3,000 de honorario = $6,000.</p>
+    <div class="say">"Su cliente busca antes de llamar. Lo que encuentre tiene que mostrarle su seriedad, sin prometer resultados."</div>
+    <div class="note"><b>Cuidado:</b> sin promesas de resultados ni casos ganados. Revisar reglas de honorarios y publicidad de cada gremio.</div>
+  </div></details></div>
+</section>
+
+<!-- DATOS -->
+<section class="sec" id="s-datos">
+  <h2>Datos con fuente</h2>
+  <div class="box">
+    <p>Cada cifra se dice con su fuente y su año. Si el cliente pregunta de dónde sale, muestra la fuente en pantalla. Si no hay respuesta, no se usa.</p>
+    <p><span class="st v">Verificado</span> lo encontramos en la fuente original, se puede citar. <span class="st c">Confirmar</span> tiene base pendiente: no se dice hasta confirmarla. <span class="st c">EE.UU.</span> es válido como tendencia; se dice que es de EE.UU. <span class="st u">No usar</span> no tiene fuente o viene de un proveedor que lo vende.</p>
+  </div>
+
+  <h3>México · INEGI ENDUTIH 2024</h3>
+  <table>
+    <tr><th>Dato</th><th>Estado</th><th>Cómo decirlo</th></tr>
+    <tr><td>100.2 millones de usuarios de internet (83.1% de 6 años o más)</td><td><span class="st v">Verificado</span></td><td>"Según INEGI, en México hay más de 100 millones de usuarios de internet."</td></tr>
+    <tr><td>97.2% se conecta desde el celular</td><td><span class="st v">Verificado</span></td><td>"97 de cada 100 usuarios de internet se conectan desde el celular."</td></tr>
+    <tr><td>88.2% usa internet para buscar información</td><td><span class="st v">Verificado</span></td><td>"Casi 9 de cada 10 usuarios de internet lo usan para buscar información." (Mide uso general, no búsqueda de negocios.)</td></tr>
+    <tr><td>35.8% compra en línea</td><td><span class="st v">Verificado</span></td><td>"Más de 1 de cada 3 usuarios de internet compra en línea."</td></tr>
+  </table>
+  <h3>Qué se compra en línea (INEGI 2024)</h3>
+  <table>
+    <tr><th>Categoría</th><th>%</th><th>Giros</th></tr>
+    <tr><td>Higiene personal</td><td>77.9%</td><td>Farmacias, tiendas</td></tr>
+    <tr><td>Artículos para el hogar</td><td>45.8%</td><td>Ferreterías, tiendas, florerías</td></tr>
+    <tr><td>Alimentos y bebidas</td><td>33.0%</td><td>Restaurantes, taquerías</td></tr>
+    <tr><td>Artículos de salud</td><td>18.6%</td><td>Farmacias (compra de producto, no consulta)</td></tr>
+    <tr><td>Vehículos o refacciones</td><td>17.1%</td><td>Talleres (compra de piezas, no servicio)</td></tr>
+    <tr><td>Libros</td><td>16.3%</td><td>Escuelas de idiomas (parcial)</td></tr>
+  </table>
+
+  <h3>Ganchos de México</h3>
+  <table>
+    <tr><th>Dato</th><th>Estado</th><th>Cómo decirlo</th></tr>
+    <tr><td>95 de cada 100 micronegocios no vendían por internet en 2023 (solo 4.4% sí)</td><td><span class="st v">Verificado</span></td><td>Dato nacional. No decir "su competencia" sin revisarla.</td></tr>
+    <tr><td>Micronegocios que venden por internet: de 2.1% (2018) a 4.4% (2023)</td><td><span class="st v">Verificado</span></td><td>"La proporción de micronegocios que vende por internet se duplicó en cinco años. Todavía es muy poca."</td></tr>
+    <tr><td>Pymes que venden por internet: de 18.7% (2018) a 28.8% (2023)</td><td><span class="st v">Verificado</span></td><td>"Casi 3 de cada 10 pymes ya venden por internet."</td></tr>
+    <tr><td>77.2 millones de personas compraron en línea en 2025</td><td><span class="st c">Confirmar</span></td><td>Dato de nota de prensa de AMVO. Confirmar en amvo.org.mx antes de citarlo.</td></tr>
+    <tr><td>71% combina tienda física y en línea</td><td><span class="st c">Confirmar</span></td><td>AMVO 2026 (datos 2025). No se dice hasta confirmar la base.</td></tr>
+    <tr><td>71% usa Google para comparar precios (Hot Sale 2026)</td><td><span class="st c">Confirmar</span></td><td>Google e Ipsos, n=1,000. Dato de nota de prensa.</td></tr>
+    <tr><td>69% ve videos de unboxing o pruebas antes de comprar</td><td><span class="st c">Confirmar</span></td><td>Google e Ipsos, Hot Sale 2026. Dato de nota de prensa.</td></tr>
+    <tr><td>59% de los pacientes usa internet para consultar salud</td><td><span class="st c">Confirmar</span></td><td>FUNSALUD 2025, base por confirmar. Decir "según FUNSALUD 2025" y evitar porcentajes hasta confirmarla.</td></tr>
+    <tr><td>45% de los médicos recomienda medios especializados</td><td><span class="st v">Verificado</span></td><td>Médic@ Digital 2024, 2,150 médicos.</td></tr>
+    <tr><td>64% investigó un producto después de ver un anuncio en redes</td><td><span class="st c">Confirmar</span></td><td>Capterra 2024, 470 personas en México. Muestra chica: usar como tendencia.</td></tr>
+    <tr><td>50% confía en las reseñas de usuarios comunes</td><td><span class="st c">Confirmar</span></td><td>Capterra 2024. Usar como tendencia.</td></tr>
+  </table>
+
+  <h3>Cómo buscan los negocios locales (EE.UU.)</h3>
+  <p class="tip">No hay encuesta mexicana sobre búsqueda local. Lo más cercano son estudios de EE.UU., que se dicen como tendencia y con su nombre y año.</p>
+  <table>
+    <tr><th>Dato</th><th>Estado</th><th>Cómo decirlo</th></tr>
+    <tr><td>58% empieza la búsqueda de un negocio local en un buscador tradicional</td><td><span class="st c">EE.UU.</span></td><td>"En EE.UU., 58% de los consumidores empieza en un buscador tradicional." (GatherUp, 2025)</td></tr>
+    <tr><td>75% lee reseñas de negocios locales al investigar</td><td><span class="st c">EE.UU.</span></td><td>"En EE.UU., tres de cada cuatro personas revisan reseñas antes de elegir un negocio local." (BrightLocal, 2024)</td></tr>
+    <tr><td>71% no consideraría un negocio con menos de tres estrellas</td><td><span class="st c">EE.UU.</span></td><td>BrightLocal, 2024, 1,141 consumidores.</td></tr>
+    <tr><td>55% ha consultado un resumen de IA al buscar un negocio local</td><td><span class="st c">EE.UU.</span></td><td>Tendencia. No tiene el mismo peso que el buscador tradicional (GatherUp, 2025).</td></tr>
+  </table>
+
+  <h3>Por nicho</h3>
+  <table>
+    <tr><th>Nicho</th><th>Dato</th><th>Estado</th></tr>
+    <tr><td>Restaurantes</td><td>45% revisa reseñas antes de elegir un restaurante nuevo (TouchBistro, "How Diners Choose Restaurants", 521 personas, EE.UU.; el año no aparece en la fuente)</td><td><span class="st c">EE.UU.</span> Decir "en EE.UU., casi la mitad revisa reseñas antes de elegir un restaurante nuevo". No decir año.</td></tr>
+    <tr><td>Restaurantes (alimentos)</td><td>33% compra alimentos y bebidas en línea (INEGI 2024)</td><td><span class="st v">Verificado</span> Para la venta por pedido directo, no para la búsqueda.</td></tr>
+    <tr><td>Salud (consultorios, dentistas)</td><td>59% de pacientes usa internet para consultar salud (FUNSALUD 2025)</td><td><span class="st c">Confirmar</span> Decir "según FUNSALUD 2025". No hablar de reseñas dentales: no hay dato.</td></tr>
+    <tr><td>Veterinarias</td><td>Sin dato verificado. El 62% que circula no tiene autor ni año.</td><td><span class="st u">No usar</span> el 62%.</td></tr>
+    <tr><td>Farmacias</td><td>18.6% compra artículos de salud en línea (INEGI 2024)</td><td><span class="st v">Verificado</span> Es compra de producto; no se usa como dato de venta de medicamentos.</td></tr>
+    <tr><td>Talleres</td><td>17.1% compra vehículos o refacciones en línea (INEGI 2024)</td><td><span class="st v">Verificado</span> Es compra de piezas; no decir que buscan servicio con ese dato.</td></tr>
+    <tr><td>Ferreterías y tiendas</td><td>45.8% compra artículos para el hogar en línea (INEGI 2024)</td><td><span class="st v">Verificado</span> Para decir que el cliente ya compra en línea.</td></tr>
+    <tr><td>Gimnasios, salones, lavanderías, florerías, despachos, escuelas, hospedaje, constructoras</td><td>Sin dato verificado por giro.</td><td><span class="st p">Pendiente</span> Usar los datos generales de México. No inventar un dato por giro.</td></tr>
+  </table>
+
+  <p class="tip">Las historias para la visita están en la sección Storytelling.</p>
+
+  <h3>Cómo decirlo en la visita</h3>
+  <div class="say">"Según INEGI, en México hay más de 100 millones de usuarios de internet, y 97 de cada 100 se conectan desde el celular. Ahí es donde su negocio tiene que aparecer."</div>
+  <div class="say">"En EE.UU., según BrightLocal, tres de cada cuatro personas revisan reseñas antes de elegir un negocio local. Por eso su ficha de Google importa."</div>
+  <p class="tip">Antes de imprimir o compartir, confirma cada cifra en su fuente original.</p>
+</section>
+
+<!-- STORYTELLING -->
+<section class="sec" id="s-storytelling">
+  <h2>Storytelling con datos</h2>
+  <div class="box">
+    <p><b>Cómo se usa.</b> Elige una historia por giro o una universal, según lo que el cliente ya dijo en la visita. No cuentes más de una historia por visita.</p>
+    <p><b>Hilo de la visita:</b> 1. Escena (el cliente se imagina a alguien que lo busca) · 2. Dato (un número que ubica el momento, con su fuente) · 3. Espejo (él se ve en la historia: qué le falta) · 4. Simulador (cómo se vería su negocio) · 5. Siguiente paso (una decisión chica y concreta).</p>
+  </div>
+  <div class="note"><b>Regla de las escenas.</b> Todas las escenas son ilustrativas. No son clientes reales ni casos de Mantis. Si el cliente pregunta si es un caso real, di: "Es una escena para ilustrar cómo se busca hoy un negocio." Hoy no hay casos verificados; cuando haya uno, será la historia más fuerte.</div>
+  <h3>Filtrar por giro</h3>
+  <div class="chips" id="schips" role="group" aria-label="Filtrar historias por giro"></div>
+  <div id="slist"></div>
+  <div class="box">
+    <b>Lo que no se cuenta</b>
+    <ul>
+      <li>Historias de clientes que no existen, ni presentadas como casos reales.</li>
+      <li>Escenas que asustan (negocio que cierra, pérdida de todo). Generan rechazo, no compra.</li>
+      <li>Historias que usan el nombre o la marca de otra empresa.</li>
+      <li>Datos de la columna "Confirmar" o "No usar" dentro de la historia.</li>
+    </ul>
+  </div>
+  <p class="tip">Estados: Verificado = se puede citar con fuente. Confirmar = no se dice hasta validar la fuente. EE.UU. = tendencia; decir que es de EE.UU. Sin cifra = solo escena.</p>
+</section>
+
+<!-- POSTVENTA -->
+<section class="sec" id="s-postventa">
+  <h2>Post-venta y venta cruzada</h2>
+  <div class="box">
+    <p><b>Cuándo se usa.</b> Después de la entrega, en la mentoría o en el seguimiento. Nunca en la visita de venta: el cliente ya decidió el paquete, y sumar más en ese momento suena a presión.</p>
+  </div>
+  <h3>Venta cruzada: que complemente, no compita</h3>
+  <ul>
+    <li>Se ofrece algo que mejora lo que ya compró, nunca otro sitio ni otro paquete.</li>
+    <li>Solo se ofrece lo que ya existe y tiene precio por escrito: la mensualidad y la renovación desde el segundo año. Se menciona después de la mentoría y solo si el negocio lo necesita.</li>
+    <li>Explica el porqué con su negocio, no con una lista de servicios.</li>
+  </ul>
+  <div class="say">"Su sitio ya está. Lo que lo mantiene al día son los precios, las fotos y los horarios. Si le sirve que alguien lo haga cada mes, lo revisamos por escrito."</div>
+  <h3>Momento</h3>
+  <ol>
+    <li><b>Durante la visita:</b> escucha. Si menciona un problema que el paquete no cubre, anótalo; no lo vendas ahí.</li>
+    <li><b>Entrega:</b> el cliente revisa el sitio y se cierra la entrega.</li>
+    <li><b>Días después:</b> llama o escribe para ver cómo le va y, si hay una necesidad clara, ofrece el complemento.</li>
+  </ol>
+  <h3>Fidelizar sin regalar</h3>
+  <ul>
+    <li>Resolver rápido un cambio que pide suele pesar más que cualquier extra.</li>
+    <li>Usa su nombre y recuerda su giro. Que sienta que es su sitio, no un número más.</li>
+    <li>Mantén el contacto con algo útil: un dato de su giro con fuente, o un aviso de cambio que le sirva. Nada de promociones con "solo hoy".</li>
+  </ul>
+  <div class="note"><b>Cuidado:</b> no se prometen ventas, clientes ni cifras por la venta cruzada. No se regala nada para que compre más, ni se usa "gratis" o "de regalo". Las ideas de este apartado son de entrenamiento, no cifras verificadas.</div>
+</section>
+
+<!-- NO DECIR -->
+<section class="sec" id="s-nodecir">
+  <h2>Qué no decir</h2>
+  <div class="box">
+    <ul>
+      <li>"Garantizado", "100%", "seguro que funciona".</li>
+      <li>"Primera opción de Maps" o "primer lugar en Google".</li>
+      <li>"8 de cada 10 buscan en Google antes de consumirte" (no está en ninguna fuente).</li>
+      <li>"98% de los consumidores se influencian por reseñas" (la publica un proveedor de reseñas, no es un estudio independiente).</li>
+      <li>"6 horas al día en el celular" (ni siquiera con otra fuente). "10.1 horas viendo el smartphone" (estudio de 2016, alcance regional). "8 horas diarias en el celular, atribuido a la OCDE" (la OCDE no tiene ese dato).</li>
+      <li>"Una estrategia digital sube hasta 90% o 98% la probabilidad de compra."</li>
+      <li>"88.2% de internautas participa en comercio electrónico" (AMVO): contradice el 35.8% de INEGI. "83% de consumidores busca información en línea sobre empresas" (Accenture, 2016): antiguo y sin muestra.</li>
+      <li>"62% de los dueños de mascotas", "97% vacuna a sus mascotas" (encuesta de 2015 con 414 dueños), "50% de dueños de mascotas confían en internet" (estudio global de 34 países, sin dato mexicano).</li>
+      <li>"78% recurre a ChatGPT para temas de salud" (sin base), "81% de los médicos usa WhatsApp" y "46% ofrece consulta virtual" (la nota no atribuye esas cifras a ningún estudio).</li>
+      <li>"Plantilla" para describir el simulador.</li>
+      <li>"Regalar" o "gratis" para la mentoría.</li>
+      <li>"Monopolizar" como verbo de la alianza.</li>
+      <li>Marca de agua, logos de marcas o promociones de medicamentos: no están en el paquete.</li>
+      <li>Cualquier precio, plazo o cupo distinto al de la presentación.</li>
+    </ul>
+  </div>
+  <div class="note"><b>Frases naranja</b> que se dicen solo con la versión segura al lado: "cacho del pastel", "market cap", "trabaje menos y gane más", "que duerma tranquilo", "facturan el triple", "cuesta menos que un empleado". Están en la sección Speech, punto 13.</div>
+  <div class="box">
+    <b>Cuando el cliente pregunta algo que no está aquí</b>
+    <p>Di: "Lo confirmo y le escribo." Anótalo y revísalo con el equipo.</p>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section class="sec" id="s-checklist">
+  <h2>Checklist antes de salir</h2>
+  <div class="box">
+    <ul>
+      <li>¿El cliente habló de su dolor antes de que explicara el paquete?</li>
+      <li>¿Usé 5 o 6 preguntas en total, y no más de dos de nivel 4 o 5 seguidas?</li>
+      <li>¿Las cifras del radar y del diagnóstico tienen fuente visible?</li>
+      <li>¿Dije $6,790 con IVA incluido y el anticipo de $3,395?</li>
+      <li>¿Hice la pregunta de cierre y pedí una fecha de seguimiento si dijo que no?</li>
+      <li>¿Dejé el contrato y el anexo, sin prometer nada que no esté en ellos?</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ENLACES -->
+<section class="sec" id="s-enlaces">
+  <h2>Enlaces para la visita</h2>
+  <div class="box links">
+    <a href="https://beltranprime-prog.github.io/MANTIS/index.html" target="_blank" rel="noopener">Diagnóstico y Retorno (QR 1)</a>
+    <a href="https://beltranprime-prog.github.io/MANTIS-radar/" target="_blank" rel="noopener">Radar de Oportunidad (QR 2)</a>
+    <a href="https://beltranprime-prog.github.io/MANTIS-simulador/" target="_blank" rel="noopener">Simulador (QR 3)</a>
+  </div>
+  <p class="tip">Abre cada enlace antes de la visita y revisa que cargue con el nombre del giro y la zona correctos.</p>
+</section>
+
+<footer>Mantis · Manual para colaboradores · Octubre 2026. Las cifras que dicen "Confirmar" no se usan hasta validarlas en la fuente.</footer>
+</div>
+
+<script>
+const D = [
+  {g:"Universal", t:"Está caro o no tengo ese dinero ahorita", p:"¿Le preocupa el monto total o cuándo pagarlo?", r:"Son $6,790 con IVA incluido. Se aparta con $3,395 y el resto se paga al entregar. El sitio le da una imagen seria que el cliente nuevo nota desde la primera búsqueda, y eso es lo que hace que confíe antes de llamar."},
+  {g:"Universal", t:"Déjeme pensarlo", p:"¿Qué le gustaría revisar para decidir?", r:"Claro. Le dejo el simulador con el nombre de su negocio para que lo vea con calma y le mando el resumen por WhatsApp. Así puede ver cómo se presentaría su negocio frente a un cliente nuevo. Trabajamos con 22 negocios al año, así que si quiere apartar su lugar, es con el anticipo."},
+  {g:"Universal", t:"Ya tengo Facebook o Instagram", p:"Cuando alguien busca su negocio en Google, ¿qué encuentra?", r:"Qué bueno, eso suma. Pero quien busca en Google no llega a sus redes: llega al sitio y a la ficha de Maps, y ahí decide si confía. Además incluimos 4 posts al mes para que usted los publique."},
+  {g:"Universal", t:"Mi sobrino o un conocido me lo hace", p:"¿Ya tiene su sitio funcionando o está pendiente?", r:"Qué bueno tener quien le ayude. Lo que le ofrecemos es respaldo por escrito: si no entregamos en 7 días desde que recibimos sus materiales, le devolvemos lo que haya pagado, y lo acompañamos 12 meses con cambios incluidos."},
+  {g:"Universal", t:"No tengo tiempo", r:"Por eso lo hacemos nosotros. Usted nos manda fotos, servicios y horario; el resto corre por nuestra cuenta. Usted solo revisa que su negocio se vea como quiere que lo vean."},
+  {g:"Universal", t:"Ya lo intenté y no funcionó", p:"¿Qué hizo antes y qué le faltó?", r:"Muchas veces se compra una página sin atención en línea, y el cliente se va porque no le da confianza. Nosotros entregamos un sitio con mantenimiento, cambios y contenido, para que siempre se vea actual y serio. No prometemos ventas: prometemos que el sitio esté listo y que lo acompañemos."},
+  {g:"Universal", t:"¿Y si no sale bien?", r:"Si no entregamos en 7 días desde que recibimos sus materiales, le devolvemos lo que haya pagado. Las ventas dependen del servicio que da usted; lo que sí garantizamos por escrito es la entrega, en el anexo del contrato."},
+  {g:"Universal", t:"¿Y Google Maps?", r:"Optimizamos su ficha con fotos, horario, categoría correcta y el enlace a su sitio. Empezamos cuando nos da acceso a su perfil, y lo dejamos listo hasta 2 días después de tener el sitio y el acceso. Cómo se posiciona no lo podemos garantizar."},
+  {g:"Universal", t:"¿Por qué ustedes?", r:"Somos Mantis Digital Agency: trabajamos con un solo negocio por giro y zona, para cuidar cada alianza. Todavía no tenemos casos publicados; lo que sí le damos es el método, el sitio entregado por escrito y el seguimiento."},
+  {g:"Universal", t:"¿Quién es Mantis?", r:"Somos una alianza de estrategia digital para negocios locales de Morelia. Operamos con un número limitado de clientes para poder atenderlos bien."},
+  {g:"Universal", t:"Quiero pagar la mitad o en plazos", r:"El anticipo es del 50%, $3,395, y el resto se paga al entregar. Si necesita otra forma de pago, lo revisamos con el encargado y le confirmo por escrito."},
+  {g:"Universal", t:"¿Y si quiero cancelar?", r:"Si no entregamos en 7 días desde que recibimos sus materiales, le devolvemos lo que haya pagado. Las condiciones de cancelación están en el contrato; se las mostramos antes de firmar."},
+  {g:"Universal", t:"Tengo que consultarlo con mi socio o mi esposa", r:"Claro. ¿Qué le gustaría que les mostrara? Le dejo el resumen y el simulador con el nombre del negocio para que lo vean juntos, y le escribo en 24 a 48 horas."},
+  {g:"Universal", t:"No tengo cuenta de Google del negocio", r:"No hace falta que la tenga lista hoy. Si la ficha no existe o está a nombre de otra persona, lo revisamos juntos y le decimos qué paso sigue. Lo confirmo y le escribo."},
+
+  {g:"Restaurantes y taquerías", t:"Mis clientes me conocen, no necesito internet", p:"¿Cuántos clientes nuevos le llegan de alguien que no lo conocía?", r:"Sus clientes de siempre seguirán llegando. El sitio es para quien busca tacos cerca y nunca ha pasado por aquí: al ver menú, fotos y horario, decide si confía en usted antes de venir."},
+  {g:"Restaurantes y taquerías", t:"No quiero que vean mis precios", r:"No hace falta publicarlos. Puede mostrar el menú sin precios y poner consulte por WhatsApp. Lo que sí da confianza es que se vean el platillo, el lugar y el horario."},
+  {g:"Restaurantes y taquerías", t:"Ya tengo WhatsApp y Facebook para pedidos", p:"¿Cuántos pedidos le llegan de gente que nunca lo ha visto?", r:"Qué bien. El sitio permite que lo encuentren quienes no lo conocen y vean su negocio antes de escribirle. El pedido llega al mismo WhatsApp que ya usa."},
+  {g:"Restaurantes y taquerías", t:"Ya salgo en Google con el mapa, basta", p:"¿Tiene fotos del menú y del local en su ficha?", r:"El mapa lo encuentra. El sitio le da menú, fotos y horario completos, y eso es lo que hace que alguien que no lo conoce se sienta seguro de ir."},
+  {g:"Restaurantes y taquerías", t:"Las apps de delivery me quitan mucha comisión", r:"Las apps cobran comisión por cada pedido. El sitio le da un canal propio donde el cliente lo conoce y le escribe directo a WhatsApp. No prometemos bajar esas comisiones."},
+  {g:"Restaurantes y taquerías", t:"No tengo capacidad para más clientes", r:"No hace falta crecer de golpe. El sitio sirve para que lleguen a su mesa con confianza, y crecemos cuando usted lo decida."},
+  {g:"Restaurantes y taquerías", t:"Mi clientela es de tradición, no de internet", p:"¿Qué clientes nuevos le gustaría tener el próximo año?", r:"Sus clientes de siempre se quedan. El sitio es para quien llega de fuera de la colonia, de paso o por primera vez, y encuentra un negocio serio y bien presentado."},
+
+  {g:"Talleres mecánicos", t:"Mi trabajo viene por recomendación", p:"Cuando le recomiendan, ¿la persona lo busca en Google antes de llamar?", r:"Sí. Si lo busca y no encuentra nada, la recomendación pierde fuerza. El sitio confirma lo que le dijeron: servicios, horario y teléfono. Eso le da credibilidad antes de la primera llamada."},
+  {g:"Talleres mecánicos", t:"Los precios cambian todo el tiempo", r:"No tiene que publicar precios exactos. Puede poner servicios y cotizar por WhatsApp. Los cambios de precio se actualizan dentro de los 12 meses de mantenimiento."},
+  {g:"Talleres mecánicos", t:"Ya tengo clientes fijos, no necesito más", p:"¿Cuántos trabajos tiene que rechazar al mes por falta de espacio o tiempo?", r:"Entonces el sitio le sirve para elegir mejores trabajos, no solo más. Además da credibilidad a quien no lo conoce."},
+  {g:"Talleres mecánicos", t:"Mis clientes no usan internet", r:"Quien busca un taller usa el celular, aunque no sea su cliente. Quien recomienda a un hijo o a un vecino sí busca en Google antes de mandarlo, y ahí el sitio genera confianza."},
+  {g:"Talleres mecánicos", t:"Ya me conocen en la colonia, no hace falta", r:"Sí, y quien llega desde otra colonia o de paso necesita encontrarlo. El sitio confirma que existe, qué hace y que es un negocio serio."},
+  {g:"Talleres mecánicos", t:"Mis precios dependen de cada carro", r:"Puede publicar servicios con su rango de precio o pedir que cotice por WhatsApp. Los cambios se actualizan dentro de los 12 meses de mantenimiento."},
+
+  {g:"Salud (consultorios, dentistas y fisioterapia)", t:"Mis pacientes no buscan en internet, vienen por el doctor", r:"Quien le recomienda busca el nombre del consultorio antes de llamar. El sitio muestra su horario, cómo agendar y sus servicios, y eso da la confianza que necesita para pedir cita."},
+  {g:"Salud (consultorios, dentistas y fisioterapia)", t:"No quiero que me critiquen en Google", p:"¿Hoy tiene reseñas en su ficha de Google?", r:"Las reseñas existen aunque no tenga sitio. El sitio y la ficha le dan la forma de responder con seriedad y de mostrar que atiende con cuidado."},
+  {g:"Salud (consultorios, dentistas y fisioterapia)", t:"Mis tratamientos son caros y no quiero publicar precios", r:"El sitio no tiene que anunciar precios. Puede explicar los tratamientos y cómo agendar una valoración, que es lo que genera confianza."},
+  {g:"Salud (consultorios, dentistas y fisioterapia)", t:"Ya tengo un directorio médico que me manda pacientes", p:"¿Esos pacientes le buscan después en Google?", r:"Algunos sí. El sitio confirma servicios y ubicación a quien ya escuchó su nombre en el directorio, y eso se convierte en una cita."},
+
+  {g:"Salones y estéticas", t:"Mi clientela es muy fija, no necesito más", r:"Entonces el sitio ayuda a mantenerlas y a que recomienden. Quien recomienda también busca el salón antes de llamar, y ahí el sitio da confianza."},
+  {g:"Salones y estéticas", t:"No sé usar redes ni internet", r:"No hace falta que usted lo maneje. Nosotros lo armamos; usted solo confirma sus servicios y precios. Lo que ve la clienta nueva es un salón serio y bien presentado."},
+  {g:"Salones y estéticas", t:"Mis precios cambian según el servicio", r:"Puede publicar servicios con rango de precio o pedir cotizar por WhatsApp. Los cambios se actualizan dentro de los 12 meses de mantenimiento."},
+  {g:"Salones y estéticas", t:"Ya tengo Instagram que se ve bien", p:"¿Quien llega a su perfil termina agendando?", r:"Si ya agenda ahí, el sitio complementa. Lleva a su perfil y a WhatsApp para citas, y suma credibilidad porque la clienta ve un negocio completo."},
+
+  {g:"Gimnasios", t:"Mi gimnasio ya tiene mucha gente", r:"Entonces el sitio ayuda a mantener clases y horarios claros para quien llega de nuevo, y a que sienta que el gimnasio está bien organizado."},
+  {g:"Gimnasios", t:"La gente ya me conoce por recomendación", r:"Quien recomienda busca horario y precios antes de ir. El sitio le confirma eso y da seguridad a quien llega por primera vez."},
+  {g:"Gimnasios", t:"Ya me cobra otra agencia", p:"¿Qué incluye lo que le cobran?", r:"Compare lo que entrega cada uno: sitio, ficha de Maps, posts, cambios y acompañamiento. Lo que importa es que el cliente nuevo vea un gimnasio serio."},
+  {g:"Gimnasios", t:"La gente se inscribe en persona", r:"Sí, pero antes de ir miran horarios, precios de inscripción y ubicación. El sitio hace que lleguen con confianza y decididos."},
+
+  {g:"Tiendas de ropa", t:"Vendo sobre todo por redes", r:"Las redes llegan a quien ya lo sigue. El sitio es para quien busca tienda de ropa en su zona y necesita ver catálogo y horario antes de visitar."},
+  {g:"Tiendas de ropa", t:"Mis clientes compran en tienda, no en línea", r:"No hace falta vender en línea. El sitio muestra catálogo, horario y ubicación para quien busca en Google antes de visitar, y eso le da confianza de que la tienda está activa."},
+
+  {g:"Ferreterías y tlapalerías", t:"Mis clientes son de la colonia, me conocen", r:"Sí, pero el contratista o el vecino de otra colonia busca ferretería abierta cerca. Horario y ubicación son lo que necesita para confiar y ir."},
+  {g:"Ferreterías y tlapalerías", t:"No vendo en línea", r:"No hace falta vender en línea. El sitio informa y da confianza, y la ficha de Maps lleva al cliente hasta la puerta."},
+  {g:"Ferreterías y tlapalerías", t:"Mis precios cambian cada día", r:"Puede poner categorías y cotizar por WhatsApp o en mostrador. Los precios exactos no hace falta publicarlos."},
+  {g:"Ferreterías y tlapalerías", t:"Mis clientes son contratistas que ya me llaman", p:"¿Cuántos contratistas nuevos le llegaron el último año?", r:"Los que ya lo llaman seguirán. El sitio es para el contratista que apenas llega a la zona y necesita un lugar en el que confiar."},
+  {g:"Ferreterías y tlapalerías", t:"No tengo espacio para mostrar productos", r:"El sitio no necesita mostrar todo. Puede mostrar las categorías principales y el horario."},
+
+  {g:"Veterinarias", t:"Mis clientes llegan en emergencias", p:"¿Cuántos casos nuevos llegan buscando de noche o en fin de semana?", r:"El sitio muestra horario de urgencias y ubicación, justo lo que busca esa persona a esa hora. En una urgencia, la confianza se gana con información clara."},
+  {g:"Veterinarias", t:"Ya tengo mis clientes en Facebook", r:"Facebook es para quien ya lo conoce. Google es para quien acaba de mudarse o busca una urgencia, y ahí el sitio da confianza antes de la llamada."},
+  {g:"Veterinarias", t:"Me recomiendan entre dueños de mascotas", r:"Quien recomienda busca el horario y la ubicación antes de ir. El sitio confirma eso y da seguridad."},
+  {g:"Veterinarias", t:"Las urgencias no se pueden programar", r:"Por eso el sitio muestra horario de urgencias y teléfono de contacto, para que sepan a qué hora llamar."},
+  {g:"Veterinarias", t:"Vendo medicamentos y eso no se publicita", r:"No promocionamos medicamentos. El sitio informa servicios, horario y ubicación."},
+
+  {g:"Escuelas de idiomas", t:"Mis alumnos llegan por recomendación", r:"Quien recomienda también busca. El sitio confirma horarios, niveles y cómo inscribirse, y así el alumno nuevo llega con confianza."},
+  {g:"Escuelas de idiomas", t:"Ya tengo un formulario de Google", r:"Perfecto. El sitio puede llevar ese formulario y mostrar sus grupos y horarios."},
+  {g:"Escuelas de idiomas", t:"Mis grupos se llenan solos", r:"Entonces el sitio ayuda a llenar los próximos grupos sin depender de un solo canal."},
+  {g:"Escuelas de idiomas", t:"Mi escuela es pequeña, no hace falta internet", r:"Quien busca clases cerca lo busca en Google antes de inscribirse. El sitio es lo que confirma horarios y niveles a quien aún no lo conoce."},
+  {g:"Escuelas de idiomas", t:"Mis clases son en línea y no tengo sede", r:"El sitio puede mostrar cómo tomar las clases en línea, horarios y cómo inscribirse."},
+
+  {g:"Salones de eventos", t:"Mis eventos se cierran en persona y por referencias", r:"Quien cotiza busca fotos de eventos antes de llamar. Una galería con sus salones confirma lo que le dijeron y genera confianza."},
+  {g:"Salones de eventos", t:"No tengo eventos para mostrar", r:"Empezamos con fotos de sus espacios y se agregan eventos cuando se realicen."},
+  {g:"Salones de eventos", t:"Trabajo con wedding planners y ellos me llevan los eventos", r:"Los planners también buscan el salón en Google y revisan fotos. El sitio confirma lo que le recomendaron y da confianza a la pareja."},
+  {g:"Salones de eventos", t:"No quiero publicar mis precios de temporada", r:"Puede publicar rangos o pedir cotización por WhatsApp. Los cambios de temporada se actualizan dentro del mantenimiento."},
+  {g:"Salones de eventos", t:"Mis fotos son de hace años", r:"Actualizamos el sitio con fotos recientes de sus espacios. Eso se hace en la entrega."},
+
+  {g:"Hospedaje", t:"Reservo por Booking o Airbnb", r:"Esas plataformas cobran comisión. El sitio le da un canal propio con su información y contacto directo, y el huésped llega con confianza."},
+  {g:"Hospedaje", t:"No necesito más huéspedes", r:"El sitio le sirve para sostener su ocupación sin depender de una sola plataforma."},
+  {g:"Hospedaje", t:"Ya tengo huéspedes frecuentes", r:"El sitio le sirve para que los frecuentes recomienden y para quien busca hospedaje en su zona por primera vez."},
+  {g:"Hospedaje", t:"Booking me da visibilidad suficiente", r:"Booking muestra su hotel junto a muchos otros. El sitio le da un canal donde usted decide cómo se presenta."},
+  {g:"Hospedaje", t:"No tengo fotos de las habitaciones", r:"Empezamos con fotos de celular y las mejoramos después."},
+
+  {g:"Farmacias", t:"Mi giro es de mostrador, no de internet", r:"La gente busca farmacia abierta cerca a cualquier hora. El sitio y la ficha de Maps dan horario y ubicación, y eso genera confianza."},
+  {g:"Farmacias", t:"Quiero publicar mis promociones", r:"Hay reglas de publicidad para medicamentos. Podemos informar servicios y horario, y revisamos cualquier promoción antes de publicarla."},
+  {g:"Farmacias", t:"Mis clientes me conocen por nombre", r:"Quien llega de paso o se muda busca farmacia cerca. El sitio confirma horario y ubicación y da confianza a quien no conoce el lugar."},
+  {g:"Farmacias", t:"Ya tengo entregas a domicilio por WhatsApp", r:"Perfecto. El sitio puede mostrar la zona de entrega y el número de WhatsApp para pedidos."},
+  {g:"Farmacias", t:"No quiero que me confundan con una tienda", r:"El sitio informa servicios y horario de la farmacia. No vende medicamentos en línea."},
+
+  {g:"Constructoras e inmobiliarias", t:"Mis clientes llegan por recomendación", r:"Quien lo recomienda busca su nombre antes de llamar. El sitio con galería confirma lo que le dijeron y genera confianza antes del presupuesto."},
+  {g:"Constructoras e inmobiliarias", t:"No tengo fotos de obras", r:"Empezamos con las que tenga, aunque sean de celular. El portafolio crece después."},
+  {g:"Constructoras e inmobiliarias", t:"Trabajo con inmobiliarias que me dan los proyectos", r:"Las inmobiliarias también buscan a la constructora antes de contratar. El sitio con portafolio confirma lo que le dijeron."},
+  {g:"Constructoras e inmobiliarias", t:"Mis obras son privadas y no puedo mostrarlas", r:"Puede mostrar obras con autorización del cliente o fotos de procesos sin datos privados. Revisamos juntos qué sí se puede publicar."},
+  {g:"Constructoras e inmobiliarias", t:"Ya pagué una página y no aparece", p:"¿Dónde la buscó y qué salió?", r:"Lo revisamos juntos: si aparece en Google y se ve bien en celular, se lo decimos. Si no, lo corregimos."},
+
+  {g:"Florerías", t:"Vendo mucho en fechas especiales", r:"Eso es justo lo que el sitio aprovecha. Se actualiza para las fechas de su negocio, y el cliente ve un negocio activo y confiable. Los cambios estacionales están incluidos."},
+  {g:"Florerías", t:"Entrego a domicilio, no necesito que me encuentren", p:"¿Cuántos pedidos llegan de alguien que no es cliente suyo?", r:"El sitio y la ficha de Maps muestran su zona de entrega y horarios a quien busca florería cerca o regalos a domicilio, y ahí decide si confía."},
+  {g:"Florerías", t:"Mis pedidos son por WhatsApp y redes", r:"El sitio puede tener el botón de WhatsApp y las fechas especiales. Quien busca en Google llega por el sitio y confía antes de escribir."},
+  {g:"Florerías", t:"No puedo tener catálogo, las flores cambian", r:"No hace falta un catálogo completo. Puede mostrar arreglos tipo, precios de referencia y pedir por WhatsApp."},
+
+  {g:"Lavanderías", t:"Todo el mundo pasa por aquí", r:"Quien pasa ya lo conoce. Quien se muda o busca lavandería cerca necesita ver horario y servicios antes de llegar, y eso le da confianza."},
+  {g:"Lavanderías", t:"Cobro por kilo, no sé cómo publicarlo", r:"Puede publicar la tarifa por kilo o poner consulte por WhatsApp. Las dos opciones funcionan."},
+  {g:"Lavanderías", t:"Mis clientes son de paso, no necesito que me busquen", r:"Quien busca lavandería cerca mientras viaja es justo quien llega. Ver horario y servicios le da confianza antes de ir."},
+  {g:"Lavanderías", t:"No tengo recogida y entrega", r:"El sitio muestra lo que sí ofrece. Si después agrega recogida, se actualiza dentro del mantenimiento."},
+
+  {g:"Despachos profesionales", t:"En mi profesión no se puede publicitar", r:"Hay reglas para servicios profesionales. El sitio informa servicios y contacto sin prometer resultados, y lo revisamos antes de publicar. Lo que sí genera confianza es que su nombre y sus servicios se vean claros."},
+  {g:"Despachos profesionales", t:"Mis clientes llegan solo por referencia y no quiero exposición", r:"El sitio puede ser solo informativo: servicios y contacto, sin promesas. Lo revisamos antes de publicar."},
+  {g:"Despachos profesionales", t:"Ya tengo un sitio de mi firma", p:"¿Aparece en Google con su nombre y servicios?", r:"Si ya aparece y se ve bien en celular, se lo decimos. Si no, lo revisamos juntos antes de hacer cambios."}
+];
+
+const GIROS = [...new Set(D.map(o => o.g))].filter(g => g !== "Universal");
+const state = { g: "Todas", q: "" };
+const $ = id => document.getElementById(id);
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+
+function chipsHTML(){
+  const opts = ["Todas", "Universal", ...GIROS];
+  const labels = {"Universal":"Universales"};
+  $("chips").innerHTML = opts.map(o =>
+    `<button class="chip" aria-pressed="${state.g === o}" data-g="${esc(o)}">${esc(labels[o] || o)}</button>`).join("");
+}
+function card(o){
+  return `<div class="card"><details><summary><span class="obj-tag">${esc(o.g)}</span><span class="obj">${esc(o.t)}</span></summary>
+  <div class="in"><p><b>Pregunta para descubrirla</b><br>${o.p ? esc(o.p) : "No hace falta. Responda directo."}</p>
+  <p><b>Respuesta</b><br>${esc(o.r)}</p>
+  <p><button data-copy="${esc(o.r)}">Copiar respuesta</button></p></div></details></div>`;
+}
+function render(){
+  const q = state.q.trim().toLowerCase();
+  const list = D.filter(o => {
+    const grupo = state.g === "Todas" || o.g === state.g;
+    const texto = (o.t + " " + (o.p||"") + " " + o.r + " " + o.g).toLowerCase();
+    return grupo && (!q || texto.includes(q));
+  });
+  $("list").innerHTML = list.length ? list.map(card).join("") : `<p class="empty">No encontré objeciones con esa búsqueda. Prueba con otra palabra.</p>`;
+}
+$("chips").addEventListener("click", e => {
+  const b = e.target.closest("button[data-g]"); if (!b) return;
+  state.g = b.dataset.g; chipsHTML(); render();
+});
+$("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+$("list").addEventListener("click", e => {
+  const b = e.target.closest("button[data-copy]"); if (!b) return;
+  const done = () => { b.textContent = "Copiado ✓"; setTimeout(() => b.textContent = "Copiar respuesta", 1800); };
+  if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.copy).then(done, () => b.textContent = "No se pudo copiar");
+  else b.textContent = "No se pudo copiar";
+});
+
+function show(id){
+  document.querySelectorAll(".sec").forEach(s => s.classList.toggle("on", s.id === "s-" + id));
+  document.querySelectorAll("#nav button").forEach(b => b.setAttribute("aria-current", b.dataset.s === id ? "true" : "false"));
+  window.scrollTo({top:0});
+  try { history.replaceState(null, "", "#" + id); } catch(e) {}
+}
+$("nav").addEventListener("click", e => {
+  const b = e.target.closest("button[data-s]"); if (b) show(b.dataset.s);
+});
+const h = (location.hash || "").replace("#", "");
+if (h && document.getElementById("s-" + h)) show(h);
+
+$("theme").addEventListener("click", () => {
+  const root = document.documentElement;
+  const light = root.getAttribute("data-theme") === "light";
+  root.setAttribute("data-theme", light ? "dark" : "light");
+  $("theme").textContent = light ? "Modo claro" : "Modo oscuro";
+});
+
+chipsHTML();
+render();
+const STORY = [
+  {g:"Universal", t:"Antes y ahora", tag:"universal", st:"v", stLabel:"Verificado",
+   esc:"Antes, para que lo conocieran, tenía que pagar la sección amarilla, la radio o la tele, y no sabía cuántos clientes llegaban. Hoy casi 9 de cada 10 usuarios de internet buscan información en línea, y 97 de cada 100 se conectan desde el celular.",
+   dato:"INEGI ENDUTIH 2024: 88.2% busca información; 97.2% usa celular.",
+   conecta:"El cliente recuerda cómo se anunciaba antes y entiende que el cambio ya ocurrió.",
+   cuidado:"\"Casi 9 de cada 10\" siempre con \"buscan información\", nunca con \"buscan negocios\"."},
+
+  {g:"Universal", t:"La escena del martes", tag:"universal", st:"e", stLabel:"Sin cifra",
+   esc:"Es martes, nueve y media de la noche. Alguien de su colonia escribe \"[giro] cerca de mí\". Aparecen tres negocios. Usted ya cerró. ¿Cuál de los tres le parece el que se ve confiable?",
+   dato:"Búsqueda en vivo, sin cifra. Se hace en el momento, con la colonia del cliente.",
+   conecta:"El cliente se ve en el lugar del que busca. La respuesta la da él, no el vendedor.",
+   cuidado:"No decir qué negocio aparece primero si la búsqueda no lo muestra ese día."},
+
+  {g:"Universal", t:"El que llegó primero", tag:"negocios chicos", st:"v", stLabel:"Verificado",
+   esc:"Hace cinco años, solo 2 de cada 100 micronegocios vendía por internet. Hoy son 4. Casi todos siguen fuera de línea. Quien llega primero en su zona se queda con la ventaja.",
+   dato:"INEGI, Censos Económicos 2024: 2.1% en 2018; 4.4% en 2023.",
+   conecta:"No es una amenaza, es una ventana. El cliente siente que todavía está a tiempo.",
+   cuidado:"\"Quien llega primero\" es una aspiración. No prometer que su negocio llegará primero."},
+
+  {g:"Universal", t:"Lo que ya construyó", tag:"universal", st:"e", stLabel:"Sin cifra",
+   esc:"Usted ya tiene clientes que confían en usted. Lo que falta es que el que todavía no lo conoce llegue con la misma confianza antes de venir.",
+   dato:"Ninguno. Es reconocimiento de lo que el cliente ya contó.",
+   conecta:"El cliente se siente valorado y la conversación se vuelve de él, no de nosotros.",
+   cuidado:"Usar solo lo que el cliente contó en la visita. No inventar historias de su negocio."},
+
+  {g:"Universal", t:"Antes de llamar, busca", tag:"universal", st:"c", stLabel:"EE.UU.",
+   esc:"Antes de llamar, la mayoría de la gente escribe el negocio en el buscador. Si no aparece con horario y fotos, la llamada no se hace. Y si aparece, la llamada llega con la decisión medio tomada.",
+   dato:"GatherUp 2025 (EE.UU.): 58% empieza la búsqueda de un negocio local en un buscador tradicional.",
+   conecta:"El cliente reconoce su propia forma de buscar. Es la base para hablar de la ficha de Google.",
+   cuidado:"Decir siempre \"en EE.UU.\" y \"tendencia\". No mencionar que la IA tiene el mismo peso: el dato de IA es de 55% y solo es tendencia."},
+
+  {g:"Universal", t:"Las estrellas que pesan", tag:"universal", st:"c", stLabel:"EE.UU.",
+   esc:"Alguien busca su negocio y ve tres estrellas y media. Lee dos reseñas y decide no ir. El negocio tenía buen servicio; lo que vio fue una ficha incompleta.",
+   dato:"BrightLocal 2024 (EE.UU.): 75% lee reseñas al investigar; 71% no consideraría un negocio con menos de tres estrellas.",
+   conecta:"Muestra que la ficha de Google importa tanto como el servicio, sin hablar de reseñas falsas ni de promesas.",
+   cuidado:"Es una escena ilustrativa. No decir que su negocio tiene estrellas específicas ni que las reseñas se pueden comprar o pedir a pacientes de salud."},
+
+  {g:"Restaurantes y taquerías", t:"Viernes, 7 de la noche", tag:"alimentos", st:"v", stLabel:"Verificado",
+   esc:"Viernes, siete de la noche. Alguien quiere cenar fuera y busca \"tacos cerca\" desde el celular. Ve dos opciones. Una tiene menú y fotos; la otra solo tiene el nombre. Elige la que se ve.",
+   dato:"INEGI ENDUTIH 2024: 33.0% de los usuarios de internet compra alimentos y bebidas en línea.",
+   conecta:"Quien busca dónde comer compara antes de salir; el menú y las fotos hacen la diferencia.",
+   cuidado:"Es compra de alimentos en línea, no búsqueda de restaurantes. No decir porcentajes de comisiones de apps."},
+
+  {g:"Restaurantes y taquerías", t:"Mesas que se deciden antes", tag:"alta cocina", st:"c", stLabel:"EE.UU.",
+   esc:"Dos parejas quieren cenar bien. Una revisa las reseñas en el celular antes de salir; la otra decide sin mirar. La primera llega con una idea clara de lo que va a pedir.",
+   dato:"TouchBistro (EE.UU.): casi la mitad revisa reseñas antes de elegir un restaurante nuevo. La fuente no indica el año.",
+   conecta:"Muestra que la decisión se toma antes de llegar, y que el menú visible ayuda.",
+   cuidado:"Decir \"en EE.UU., casi la mitad\". No decir año. La muestra es de 521 personas."},
+
+  {g:"Talleres mecánicos", t:"La pieza que se compra en línea", tag:"vehículos", st:"v", stLabel:"Verificado",
+   esc:"Un carro no arranca. El dueño busca una pieza en línea y encuentra dos tiendas. Una muestra el número de WhatsApp del taller que la instala; la otra no. Lo piensa dos veces antes de comprar.",
+   dato:"INEGI ENDUTIH 2024: 17.1% de los usuarios de internet compra vehículos o refacciones en línea.",
+   conecta:"Quien compra piezas por internet también necesita dónde instalarlas. El taller visible se gana la instalación.",
+   cuidado:"Es compra de piezas, no búsqueda de servicio. No decir que buscan servicio con ese dato."},
+
+  {g:"Salud (consultorios, dentistas y fisioterapia)", t:"El paciente que llega informado", tag:"salud", st:"c", stLabel:"Confirmar",
+   esc:"Hoy, la mayoría de los pacientes busca información de salud en internet antes de decidir, y casi la mitad de los médicos ya les recomienda buscar en medios especializados. Su paciente llega a usted después de buscar. ¿Qué encuentra cuando busca su consultorio?",
+   dato:"FUNSALUD 2025: 59% (base por confirmar). Médic@ Digital 2024: 45% de los médicos recomienda medios especializados (2,150 médicos).",
+   conecta:"El médico o dentista se ve como alguien que ya hace lo correcto, y el sitio es la siguiente pieza.",
+   cuidado:"Se dice \"la mayoría\" hasta confirmar el 59%. No mencionar reseñas dentales ni promesas de salud."},
+
+  {g:"Salones y estéticas", t:"El perfil bonito", tag:"sin cifra", st:"e", stLabel:"Sin cifra",
+   esc:"Una clienta ve un perfil con fotos muy bonitas. Quiere agendar, pero no encuentra cómo ni a qué hora. Busca otra opción que sí le muestre horario y precios por rango.",
+   dato:"Sin cifra verificada por giro.",
+   conecta:"El perfil atrae, pero la cita se decide donde pueda agendar. Lo que ve la clienta nueva es lo que decide.",
+   cuidado:"No prometer fidelidad ni usar fotos de clientas sin permiso."},
+
+  {g:"Salones de eventos y wedding planners", t:"La pareja con fecha", tag:"sin cifra", st:"e", stLabel:"Sin cifra",
+   esc:"Una pareja tiene fecha de boda y busca salones con meses de anticipación. Revisa galerías, pide cotización y compara. El planner que recomienda también busca el salón en Google.",
+   dato:"Sin cifra verificada por giro.",
+   conecta:"Quien cotiza con anticipación decide por lo que ve primero. La galería y la cotización por fecha hacen la diferencia.",
+   cuidado:"No prometer disponibilidad de fechas que el salón no ha confirmado."},
+
+  {g:"Gimnasios", t:"Las nueve de la noche", tag:"sin cifra", st:"e", stLabel:"Sin cifra",
+   esc:"Son las nueve de la noche. Alguien decide inscribirse a un gimnasio cerca. Busca horarios y precios. No los encuentra y se va a la siguiente opción.",
+   dato:"Sin cifra verificada por giro.",
+   conecta:"Quien quiere empezar busca horarios antes de ir. Lo que vea ahí decide si llega mañana.",
+   cuidado:"No prometer socios ni resultados. Las promociones no están en el paquete."},
+
+  {g:"Tiendas de ropa", t:"La colección antes de salir", tag:"comercio", st:"c", stLabel:"Confirmar",
+   esc:"Una persona sale a buscar un regalo. Antes de salir, revisa en el celular qué tiene la tienda de la colonia. Si ve algo que le gusta, va. Si no, busca en otro lado.",
+   dato:"AMVO 2026 (datos 2025): 71% de los compradores combina tienda física y en línea. Base por confirmar en amvo.org.mx.",
+   conecta:"La colección vista antes de salir decide la visita.",
+   cuidado:"No mencionar logos de marcas ni marca de agua: no están en el paquete."},
+
+  {g:"Ferreterías y tlapalerías", t:"El contratista nuevo", tag:"hogar", st:"v", stLabel:"Verificado",
+   esc:"Un contratista llega a la zona para un trabajo. Necesita material y busca una ferretería abierta cerca. Encuentra una con horario y ubicación claros, y compra ahí.",
+   dato:"INEGI ENDUTIH 2024: 45.8% de los usuarios de internet compra artículos para el hogar en línea.",
+   conecta:"El que llega a la zona busca dónde comprar. Si la ferretería aparece, la compra se queda ahí.",
+   cuidado:"Decir que el cliente ya compra en línea, no que busca ferreterías. No publicar precios que cambian cada día."},
+
+  {g:"Veterinarias", t:"Las once de la noche", tag:"sin cifra", st:"e", stLabel:"Sin cifra",
+   esc:"Son las once de la noche. Su perro se ve mal. Su dueño busca una veterinaria abierta cerca y encuentra horario de urgencias y teléfono. Llama.",
+   dato:"Sin cifra verificada. El único estudio mexicano que encontramos es de 2015 y no se usa.",
+   conecta:"En una urgencia, la confianza se gana con información clara a esa hora.",
+   cuidado:"No hacer diagnósticos ni promesas de cura. No promocionar medicamentos. Visitar al responsable médico."},
+
+  {g:"Escuelas de idiomas", t:"El alumno ya habló de usted", tag:"sin cifra", st:"e", stLabel:"Sin cifra",
+   esc:"Un amigo le recomendó la escuela. Antes de inscribirse, la persona busca horarios y niveles. Si los encuentra claros, se inscribe esa misma semana.",
+   dato:"Sin cifra verificada por giro.",
+   conecta:"Quien recomienda también busca. Lo que encuentra después es lo que decide.",
+   cuidado:"No prometer certificados ni empleo. Respetar la validez oficial."},
+
+  {g:"Hospedaje", t:"La plataforma se queda con algo", tag:"sin cifra", st:"e", stLabel:"Sin cifra",
+   esc:"Un huésped reserva por una plataforma. Un año después, vuelve a viajar y busca directo el hotel que ya conoce. Encuentra su número y reserva por WhatsApp.",
+   dato:"Sin cifra verificada por giro. No usar cifras de comisión de plataformas.",
+   conecta:"Un canal propio le permite recibir reservas directas. El huésped que ya conoce el lugar es el que vuelve.",
+   cuidado:"No prometer bajar comisiones. Las reservas en otra plataforma no se cuentan."},
+
+  {g:"Farmacias", t:"Quien se muda", tag:"salud", st:"v", stLabel:"Verificado",
+   esc:"Una familia se muda a la colonia. Necesita una farmacia abierta cerca y busca en el celular. Revisa horario y ubicación, y decide a cuál ir.",
+   dato:"INEGI ENDUTIH 2024: 18.6% de los usuarios de internet compra artículos de salud en línea.",
+   conecta:"Quien llega de paso o se muda busca farmacia cerca. El horario visible da confianza.",
+   cuidado:"Es compra de producto, no búsqueda de servicio. Sin promociones de medicamentos. No vender este giro sin revisión legal previa."},
+
+  {g:"Constructoras e inmobiliarias", t:"Las referencias que se verifican", tag:"sin cifra", st:"e", stLabel:"Sin cifra",
+   esc:"Un cliente recibe la referencia de una constructora. Antes de llamar, busca su nombre y revisa las obras. Pide presupuesto solo después de ver lo que hizo.",
+   dato:"Sin cifra verificada por giro.",
+   conecta:"Quien lo recomienda busca su nombre antes de llamar. El portafolio confirma lo que le dijeron.",
+   cuidado:"Obras privadas solo con autorización. Ciclo de venta largo."},
+
+  {g:"Florerías", t:"El último día", tag:"comercio", st:"c", stLabel:"Confirmar",
+   esc:"Es el día de la fecha. Alguien olvidó el regalo. Busca en Google florerías a domicilio, compara precios y elige la que aparece primero con horario y zona de entrega.",
+   dato:"Google e Ipsos, Hot Sale 2026: 71% de los mexicanos compara precios en Google antes de comprar (dato de nota de prensa, por confirmar).",
+   conecta:"En fechas especiales, lo que se ve primero decide el pedido.",
+   cuidado:"No prometer existencias. No decir que aparece primero si no lo muestra la búsqueda."},
+
+  {g:"Lavanderías", t:"La ropa en la mano", tag:"sin cifra", st:"e", stLabel:"Sin cifra",
+   esc:"Alguien va de paso con la ropa en la mano y busca lavandería cerca. Encuentra horario y servicios, y decide ir.",
+   dato:"Sin cifra verificada por giro.",
+   conecta:"Quien busca lavandería cerca mientras viaja es quien llega. Ver horario le da confianza antes de ir.",
+   cuidado:"Tarifas por kilo: \"consulte por WhatsApp\"."},
+
+  {g:"Despachos profesionales", t:"Su nombre antes de llamar", tag:"sin cifra", st:"e", stLabel:"Sin cifra",
+   esc:"Alguien recibe el nombre de un despacho. Antes de llamar, busca su nombre en Google, revisa los servicios y decide si le escribe.",
+   dato:"Sin cifra verificada por giro.",
+   conecta:"El cliente busca antes de llamar. Lo que encuentre tiene que mostrar seriedad.",
+   cuidado:"Sin promesas de resultados ni casos ganados. Revisar reglas de honorarios y publicidad de cada gremio."}
+];
+
+const sGroups = [...new Set(STORY.map(s => s.g))];
+let sg = "Todas";
+function sChips(){
+  const opts = ["Todas", ...sGroups];
+  $("schips").innerHTML = opts.map(o =>
+    `<button class="chip" aria-pressed="${sg === o}" data-g="${esc(o)}">${esc(o)}</button>`).join("");
+}
+function sCard(s){
+  return `<div class="card"><details><summary>${esc(s.t)}<span class="tag">${esc(s.tag)}</span><span class="st ${s.st}">${esc(s.stLabel)}</span></summary>
+  <div class="in">
+    <p><span class="lbl">Escena</span><br><span class="say" style="display:block">"${esc(s.esc)}"</span></p>
+    <p><span class="lbl">Dato</span><br>${esc(s.dato)}</p>
+    <p><span class="lbl">Por qué conecta</span><br>${esc(s.conecta)}</p>
+    <div class="note"><b>Cuidado:</b> ${esc(s.cuidado)}</div>
+  </div></details></div>`;
+}
+function sRender(){
+  $("slist").innerHTML = STORY.filter(s => sg === "Todas" || s.g === sg).map(sCard).join("");
+}
+$("schips").addEventListener("click", e => {
+  const b = e.target.closest("button[data-g]"); if (!b) return;
+  sg = b.dataset.g; sChips(); sRender();
+});
+
+sChips();
+sRender();
+</script>
+</body>
+</html>
